@@ -1,0 +1,23 @@
+body {
+  background-color: #ffff;
+}
+path:hover {
+  fill: #162840;
+  stroke: #162840;
+}
+.jeju {
+  display: none;
+  margin: auto;
+}
+
+.map_container {
+  fill: #f1d9bf;
+  stroke: grey;
+}
+
+.map_container.unactive {
+  display: none;
+}
+.jeju.active {
+  display: flex;
+}
