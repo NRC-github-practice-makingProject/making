@@ -1,21 +1,21 @@
-*{
+* {
   list-style: none;
   text-decoration: none;
   border-collapse: collapse;
   margin: 0px;
   padding: 0px;
   color: #000;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-.header{
+.header {
   display: flex;
   width: 1280px;
   height: 86px;
   margin: auto;
 }
 
-.search_area{
+.search_area {
   width: 300px;
   height: 40px;
   background: rgb(236, 236, 236);
@@ -23,7 +23,7 @@
   margin-top: 24px;
 }
 
-.search_area > form > input{
+.search_area > form > input {
   border: none;
   border-radius: 5px;
   width: 250px;
@@ -32,14 +32,14 @@
   padding-left: 10px;
 }
 
-.search_area > form > span{
+.search_area > form > span {
   width: 10px;
   color: black;
   font-weight: bold;
   cursor: pointer;
 }
 
-.nav{
+.nav {
   text-shadow: 1px 1px 1px gray;
   display: flex;
   justify-content: flex-end;
@@ -48,41 +48,114 @@
   color: #fff;
 }
 
-.nav > li{
+.nav > li {
   margin-right: 48px;
 }
 
-.section input[id*="slide"] {display:none;}
+.section input[id*="slide"] {
+  display: none;
+}
 
-	.section .slidewrap {max-width:1280px;max-height:300px;margin:0 auto;overflow:hidden;}
-	.section .slidelist {white-space:nowrap;font-size:0;}
-	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
-	.section .slidelist > li > a {display:block;position:relative;overflow:hidden;} 
-	.section .slidelist > li > a img {width:100%;}
+.section .slidewrap {
+  max-width: 1280px;
+  max-height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.section .slidelist {
+  white-space: nowrap;
+  font-size: 0;
+}
+.section .slidelist > li {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  transition: all 0.5s;
+}
+.section .slidelist > li > a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.section .slidelist > li > a img {
+  width: 100%;
+}
 
-	.section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
-	.section .slidelist .left {left:-300px;background:url('../img/left.png') center center / 100% no-repeat;} 
-	.section .slidelist .right {right:-300px;background:url('../img/right.png') center center / 100% no-repeat;} 
+.section .slidelist label {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 50px;
+  cursor: pointer;
+}
+.section .slidelist .left {
+  left: -300px;
+  background: url("../img/left.png") center center / 100% no-repeat;
+}
+.section .slidelist .right {
+  right: -300px;
+  background: url("../img/right.png") center center / 100% no-repeat;
+}
 
-	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
-	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
-	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
-  .section input[id="slide04"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-300%);}
-  .section input[id="slide05"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-400%);}
+.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(0%);
+}
+.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-100%);
+}
+.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-200%);
+}
+.section input[id="slide04"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-300%);
+}
+.section input[id="slide05"]:checked ~ .slidewrap .slidelist > li {
+  transform: translateX(-400%);
+}
 
-	.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .left {left:30px;transition:all .35s ease .5s;} 
-	.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .right {right:30px;transition:all .35s ease .5s;}
-	.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .left {left:30px;transition:all .35s ease .5s;} 
-	.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .right {right:30px;transition:all .35s ease .5s;}
-	.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .left {left:30px;transition:all .35s ease .5s;}
-	.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .right {right:30px;transition:all .35s ease .5s;}
-  .section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .left {left:30px;transition:all .35s ease .5s;}
-	.section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .right {right:30px;transition:all .35s ease .5s;}
-  .section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .left {left:30px;transition:all .35s ease .5s;}
-	.section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .right {right:30px;transition:all .35s ease .5s;}
+.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .left {
+  left: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .right {
+  right: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .left {
+  left: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .right {
+  right: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .left {
+  left: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .right {
+  right: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .left {
+  left: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .right {
+  right: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .left {
+  left: 30px;
+  transition: all 0.35s ease 0.5s;
+}
+.section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .right {
+  right: 30px;
+  transition: all 0.35s ease 0.5s;
+}
 
-
-  body {
+body {
   background-color: #ffff;
 }
 
@@ -111,5 +184,4 @@ path:hover {
   fill: #162840;
 }
 .jeju.active {
-  fill: #162840;
 }
