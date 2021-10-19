@@ -12,7 +12,7 @@ client = MongoClient('mongodb://4team:team4pass@localhost', 27017)
 
 @app.route('/')
 def home():
-    return render_template('map.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

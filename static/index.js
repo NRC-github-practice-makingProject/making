@@ -7,5 +7,4 @@ const jeju = document.querySelector('.jeju');
 toggleBtn.addEventListener('click', ()=> {
     jeju.classList.toggle('active')
     map.classList.toggle('unactive')
-
 });
