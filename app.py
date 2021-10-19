@@ -1,18 +1,10 @@
-from flask import Flask, request, render_template, jsonify
-from pymongo import MongoClient
-import datetime
-import jwt
-
-
+from flask import Flask
 app = Flask(__name__)
-
-
-client = MongoClient('mongodb://4team:team4pass@localhost', 27017)
 
 
 @app.route('/')
 def home():
-    return render_template('map.html')
+    return 'This is Home!'
 
 
 if __name__ == '__main__':
