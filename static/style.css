@@ -19,6 +19,7 @@
 .nav {
   flex: none;
   margin-left: auto;
+  margin-right: 16px;
 }
 
 .nav > ul {
@@ -48,10 +49,7 @@
  text-shadow:  0px 0px 6px rgba(255,255,255,.3),
             -4px -4px 6px rgba(116, 125, 136, .2);
 text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
-  box-shadow: -4px -4px -6px 0 rgba(255, 255, 255, 0.3),
-    4px 4px -6px 0 rgba(116, 125, 136, 0.2),
-    inset 4px 4px -6px 0 rgba(255, 255, 255, 0.2),
-    inset -4px -4px -6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px rgba(116, 125, 136, 0.2);
 }
 
 .search-container:hover > .search-input {
@@ -130,11 +128,13 @@ text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
 }
 .section .slidelist .left {
   left: -300px;
-  background: url("../img/left.png") center center / 100% no-repeat;
+  background: url("../img/left.png") center center / 75% no-repeat;
+  opacity: 0.8;
 }
 .section .slidelist .right {
   right: -300px;
-  background: url("../img/right.png") center center / 100% no-repeat;
+  background: url("../img/right.png") center center / 75% no-repeat;
+  opacity: 0.8;
 }
 
 .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
@@ -194,16 +194,6 @@ text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
   transition: all 0.35s ease 0.5s;
 }
 
-path:hover {
-  fill: #162840;
-  stroke: #162840;
-}
-
-.jeju {
-  display: none;
-  margin: auto;
-}
-
 .contents_head {
   width: 800px;
   text-align: center;
@@ -226,6 +216,14 @@ path:hover {
   text-shadow: 1px 1px 1px gray;
 }
 
+.map_list > ul > li > div > a:hover {
+  border-radius: 16px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(20, 20, 125);
+  opacity: 1;
+}
+
 .map_list1 {
   width: 1280px;
   height: 32px;
@@ -243,7 +241,7 @@ path:hover {
 .map_list2 {
   width: 1280px;
   height: 32px;
-  margin: 16px auto 16px auto;
+  margin: 16px auto 32px auto;
   display: flex;
 }
 
@@ -251,7 +249,7 @@ path:hover {
   flex: 1;
 }
 
-.map_list2 > li:not(:nth-child(7)) > div {
+.map_list2 > li:not(:nth-child(8):nth-child(9)) > div {
   border-right: 1px solid lightgray;
 }
 
@@ -268,9 +266,12 @@ input[id="popup"] {
 
 input[id="popup"] + label {
   display: inline-block;
+  padding: 10px;
   border-radius: 10px;
-  background: rgba(116, 125, 136, 0.2);
+  background: whitesmoke;
   color: black;
+  box-shadow: 1px 1px 2px 1px lightgray;
+  cursor: pointer;
 }
 
 input[id="popup"] + label + div {
@@ -296,8 +297,8 @@ input[id="popup"] + label + div > div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 800px;
   background: #fff;
   z-index: 2;
 }
@@ -310,6 +311,7 @@ input[id="popup"] + label + div > div > label {
   padding: 20px;
   background: rgba(116, 125, 136, 0.2);
   border-radius: 100%;
+  cursor: pointer;
   z-index: 1;
 }
 
@@ -344,23 +346,45 @@ input[id="popup"] + label + div > label {
 }
 
 .card_box2 {
-  margin-top: 32px;
+  margin: 32px auto 96px auto;
   font-size: xx-large;
   width: 1280px;
   height: 320px;
   background-color: yellow;
 }
 
+path:hover {
+  fill: #162840;
+  stroke: #162840;
+}
+
 .map_container {
+  position: absolute;
+  top: 100px;
+  left: 60px;
   justify-content: flex-end;
   margin: auto;
-  fill: #f1d9bf;
+  fill: #feffdf;
   stroke: grey;
 }
 
 .map_container.unactive {
   fill: #162840;
 }
+
+.jeju {
+  display: none;
+  margin: auto;
+}
+
 .jeju.active {
   fill: #162840;
+}
+
+.page_end {
+  width: 100%;
+  height: 400px;
+  background-color: silver;
+  font-size: xx-large;
+  text-align: center;
 }
