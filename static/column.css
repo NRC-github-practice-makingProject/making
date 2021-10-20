@@ -1,30 +1,73 @@
-body {
+.items0_header {
   width: 1280px;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .items0 {
-  width: 313px;
-  height: 310px;
-  position: relative;
-  background-color: grey;
-  margin: 0 0 20px 20px;
+  width: 1280px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.item0 {
   display: block;
-}
-
-.item_img0 {
-  width: 100%;
-  height: 40%;
-}
-
-.item_info0 {
+  position: relative;
+  margin: 0 10px;
   text-align: center;
+  box-shadow: 3px 4px 5px 0 rgb(2 2 2 / 40%);
 }
 
-.title0 {
-  margin: 5px;
+.item0_img {
+  width: 100%;
+  height: 217px;
 }
 
+.item0_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  margin-top: 10;
+}
+
+.item0_sub_title,
+.item0_tag,
+.item0_sub_tag {
+  font-size: 12px;
+}
+
+.item0_tag {
+  color: orange;
+  margin-bottom: 10px;
+}
+.item0_sub_title {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.item0 button {
+  width: 100px;
+  height: 60px;
+  margin: 10px 5px 5px 10px;
+  border: 0px;
+  background-color: #fff;
+  padding: 15px 30px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.item0_btn_like:hover {
+  color: red;
+  transition: 0.5s ease-in-out;
+}
+.item0_btn_accom:hover {
+  color: green;
+  transition: 0.5s ease-in-out;
+}
+.item0_btn_reviewq:hover {
+  color: blue;
+  transition: 0.5s ease-in-out;
+}
