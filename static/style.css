@@ -368,19 +368,6 @@ path:hover {
   stroke: grey;
 }
 
-.map_container.unactive {
-  fill: #162840;
-}
-
-.jeju {
-  display: none;
-  margin: auto;
-}
-
-.jeju.active {
-  fill: #162840;
-}
-
 .page_end {
   width: 100%;
   height: 400px;
