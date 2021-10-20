@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../static/style.css" >
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+        <style>
+            .title3 {
+                display: block;
+                width: 500px;
+                height: 200px;
+                margin: 50px auto 50px auto;
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                padding: 35px;
+                
+
+                background-image: url("data:image/jpeg;base64,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");
+                background-size: cover;
+                background-position: center;
+                
+            }
+
+            .card-columns {
+                
+                width: 1000px;
+                height: 400px;
+                margin: 50px auto 50px auto;
+                padding: 30px;
+                display:flex;
+                overflow-x:hidden;
+            }
+           
+            .teamcontact3 {
+                font-size: 40px;
+                width: 600px;
+                height: 600px;
+                text-align: center;
+                padding: 50px;
+                margin : auto; 
+                display: block;
+                background-color: skyblue
+                ;
+            }
+
+          
+        </style>
+    
+    </head>
+
+    <body>
+        <h1>홈</h1>
+        <div class="wrap">
+            <div class="header">
+                <div class ="search_area">
+                    <form>
+                        <input type="search" placeholder="search">
+                        <span>검색</span>
+                    </form>
+                </div>
+                <div>
+                    <ul class="nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <input type="radio" name="slide" id="slide05">
+
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <li>
+                        <a>
+                            <label for="slide05" class="left"></label>
+                            <img src="https://i.imgur.com/YcElgET.jpg">
+                            <label for="slide02" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide01" class="left"></label>
+                            <img src="https://i.imgur.com/l9hSAKm.jpg">
+                            <label for="slide03" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide02" class="left"></label>
+                            <img src="https://i.imgur.com/XNYcHGN.jpg">
+                            <label for="slide04" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide03" class="left"></label>
+                            <img src="https://i.imgur.com/w99Fz7I.jpg">
+                            <label for="slide05" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide04" class="left"></label>
+                            <img src="https://i.imgur.com/SeKoMIW.jpg">
+                            <label for="slide01" class="right"></label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="team3">
+            <h1 class=title3>우리팀을 소개합니다</h1>
+            <div class="card-columns">
+                <div class="card">
+                  <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMDJfMjcw/MDAxNjMzMTQ2MDEwNTU3.67685YQm8JLRuNbBUQpF3MsTUw_rcCqDvJqo29kkZpMg.XCtIgU_pVXeeYr4NvV2uRsdDsYFWfJP4EnRpxGapxkQg.PNG.naya30725/image.png?type=w800" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">이름1</h5>
+                    <p class="card-text">소개1</p>
+                  </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMDJfMjcw/MDAxNjMzMTQ2MDEwNTU3.67685YQm8JLRuNbBUQpF3MsTUw_rcCqDvJqo29kkZpMg.XCtIgU_pVXeeYr4NvV2uRsdDsYFWfJP4EnRpxGapxkQg.PNG.naya30725/image.png?type=w800" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">이름1</h5>
+                      <p class="card-text">소개1</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMDJfMjcw/MDAxNjMzMTQ2MDEwNTU3.67685YQm8JLRuNbBUQpF3MsTUw_rcCqDvJqo29kkZpMg.XCtIgU_pVXeeYr4NvV2uRsdDsYFWfJP4EnRpxGapxkQg.PNG.naya30725/image.png?type=w800" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">이름1</h5>
+                      <p class="card-text">소개1</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMDJfMjcw/MDAxNjMzMTQ2MDEwNTU3.67685YQm8JLRuNbBUQpF3MsTUw_rcCqDvJqo29kkZpMg.XCtIgU_pVXeeYr4NvV2uRsdDsYFWfJP4EnRpxGapxkQg.PNG.naya30725/image.png?type=w800" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">이름1</h5>
+                      <p class="card-text">소개1</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://mblogthumb-phinf.pstatic.net/MjAyMTEwMDJfMjcw/MDAxNjMzMTQ2MDEwNTU3.67685YQm8JLRuNbBUQpF3MsTUw_rcCqDvJqo29kkZpMg.XCtIgU_pVXeeYr4NvV2uRsdDsYFWfJP4EnRpxGapxkQg.PNG.naya30725/image.png?type=w800" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">이름1</h5>
+                      <p class="card-text">소개1</p>
+                    </div>
+                </div>       
+            </div>
+        </div>
+
+        <div class="teamcontact3">
+            <p>팀원에게 연락하기</p>
+            <P>이름: email</P>
+            <P>이름: email</P>
+            <P>이름: email</P>
+            <P>이름: email</P>
+            <P>이름: email</P>
+        </div>
+        
