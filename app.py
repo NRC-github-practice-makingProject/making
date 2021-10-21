@@ -6,8 +6,8 @@ import datetime
 app = Flask(__name__)
 
 
-# client = MongoClient('mongodb://4team:team4pass@localhost', 27017)
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://4team:team4pass@3.36.13.234', 27017)
+# client = MongoClient('localhost', 27017)
 db = client.dbGilbert
 
 
@@ -17,9 +17,15 @@ def home():
 
 
 @app.route("/api/rest", methods=['GET'])
-def listing():
+def rest_listing():
     rest = list(db.rest.find({}, {'_id': False}))
     return jsonify({'rest': rest})
+
+
+@app.route("/api/attr", methods=['GET'])
+def attr_listing():
+    attr = list(db.attr.find({}, {'_id': False}))
+    return jsonify({'rest': attr})
 
 
 if __name__ == '__main__':
