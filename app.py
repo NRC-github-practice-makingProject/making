@@ -7,7 +7,8 @@ import jwt
 app = Flask(__name__)
 
 
-client = MongoClient('mongodb://4team:team4pass@localhost', 27017)
+# client = MongoClient('mongodb://4team:team4pass@localhost', 27017)
+client = MongoClient('localhost', 27017)
 
 
 @app.route('/')
