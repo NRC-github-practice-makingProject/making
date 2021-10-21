@@ -26,6 +26,8 @@ function rest_page() {
                 let sub_item_tag4 = rest[i]['sub_item_tag4']
                 let sub_item_tag5 = rest[i]['sub_item_tag5']
 
+                if (item_tags1 == 'null')
+
                 let temp_html = `
                 <div class="card">
             <img class="card-img-top"
@@ -70,6 +72,7 @@ function attr_page() {
                 let sub_item_tag4 = rest[i]['sub_item_tag4']
                 let sub_item_tag5 = rest[i]['sub_item_tag5']
 
+                
                 let temp_html = `
                 <div class="card">
             <img class="card-img-top"
