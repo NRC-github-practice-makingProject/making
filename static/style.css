@@ -487,12 +487,13 @@ input[id="popup"] + label + div > label {
 .item0_sub_title,
 .item0_tag,
 .item0_sub_tag {
-  font-size: 12px;
+  font-size: 10xp;
 }
 
 .item0_tag {
   color: orange;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 .item0_sub_title {
   color: grey;
