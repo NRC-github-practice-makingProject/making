@@ -162,18 +162,23 @@ input[id="menuicon"]:checked ~ header .menubtn {background:url('./img/btn_bg.png
 
 .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(0%);
+  transition: 1s;
 }
 .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-100%);
+  transition: 1s;
 }
 .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-200%);
+  transition: 1s;
 }
 .section input[id="slide04"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-300%);
+  transition: 1s;
 }
 .section input[id="slide05"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-400%);
+  transition: 1s;
 }
 
 .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .left {
