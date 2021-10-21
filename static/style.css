@@ -462,29 +462,4 @@ input[id="popup"] + label + div > label {
   position: relative;
   top: 40%;
   text-align: center;
-  font-weight: lighter;
-  color: rgb(224, 224, 224);
-}
-
-.page_end > h1 {
-  font-size: 3rem;
-}
-
-.page_end > h5 {
-  font-size: 1.2rem;
-}
-
-path:hover {
-  fill: #162840;
-  stroke: #162840;
-}
-
-.map_container {
-  position: absolute;
-  top: 100px;
-  left: 60px;
-  justify-content: flex-end;
-  margin: auto;
-  fill: #ffeebf;
-  stroke: grey;
 }
