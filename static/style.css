@@ -8,10 +8,31 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.membership {
+  width: 1280px;
+  margin: auto;
+}
+
+.membership > ul {
+  width: 480px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 12px;
+  position: relative;
+  top: 8px;
+}
+
+.membership > ul > li {
+  margin-left: 24px;
+  text-shadow: 1px 1px 1px gray;
+  line-height: 32px;
+}
+
 .header {
   align-items: center;
   display: flex;
-  height: 86px;
+  height: 64px;
   width: 1280px;
   margin: auto;
 }
@@ -25,7 +46,7 @@
 .nav > ul {
   text-shadow: 1px 1px 1px gray;
   display: flex;
-  line-height: 86px;
+  line-height: 64px;
 }
 
 .nav > ul > li {
@@ -234,64 +255,134 @@ input[id="menuicon"]:checked ~ header .menubtn {
 
 .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(0%);
-  transition: 1s;
+  animation: slide01 25s infinite;
 }
 .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-100%);
-  transition: 1s;
+  animation: slide02 25s infinite;
 }
 .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-200%);
-  transition: 1s;
+  animation: slide03 25s infinite;
 }
 .section input[id="slide04"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-300%);
-  transition: 1s;
+  animation: slide04 25s infinite;
 }
 .section input[id="slide05"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(-400%);
-  transition: 1s;
+  animation: slide05 25s infinite;
 }
 
 .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .left {
   left: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .right {
   right: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .left {
   left: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .right {
   right: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .left {
   left: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .right {
   right: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .left {
   left: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide04"]:checked ~ .slidewrap li:nth-child(4) .right {
   right: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .left {
   left: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
 }
 .section input[id="slide05"]:checked ~ .slidewrap li:nth-child(5) .right {
   right: 30px;
-  transition: all 0.35s ease 0.5s;
+  transition: all 0.35s ease 0.35s;
+}
+
+@keyframes slide01 {
+  0% {left:0%;}
+  18% {left:0%;}
+  20% {left:-100%;}
+  38% {left:-100%;}
+  40% {left:-200%;}
+  58% {left:-200%;}
+  60% {left:-300%;}
+  78% {left:-300%;}
+  80% {left:-400%;}
+  98% {left:-400%;}
+  100% {left:0%;}
+}
+
+@keyframes slide02 {
+  0% {left:0%;}
+  18% {left:0%;}
+  20% {left:-100%;}
+  38% {left:-100%;}
+  40% {left:-200%;}
+  58% {left:-200%;}
+  60% {left:-300%;}
+  78% {left:-300%;}
+  80% {left:100%;}
+  98% {left:100%;}
+  100% {left:0%;}
+}
+
+@keyframes slide03 {
+  0% {left:0%;}
+  18% {left:0%;}
+  20% {left:-100%;}
+  38% {left:-100%;}
+  40% {left:-200%;}
+  58% {left:-200%;}
+  60% {left:200%;}
+  78% {left:200%;}
+  80% {left:100%;}
+  98% {left:100%;}
+  100% {left:0%;}
+}
+
+@keyframes slide04 {
+  0% {left:0%;}
+  18% {left:0%;}
+  20% {left:-100%;}
+  38% {left:-100%;}
+  40% {left:300%;}
+  58% {left:300%;}
+  60% {left:200%;}
+  78% {left:200%;}
+  80% {left:100%;}
+  98% {left:100%;}
+  100% {left:0%;}
+}
+
+@keyframes slide05 {
+  0% {left:0%;}
+  18% {left:0%;}
+  20% {left:400%;}
+  38% {left:400%;}
+  40% {left:300%;}
+  58% {left:300%;}
+  60% {left:200%;}
+  78% {left:200%;}
+  80% {left:100%;}
+  98% {left:100%;}
+  100% {left:0%;}
 }
 
 .contents_head {
@@ -364,14 +455,14 @@ path:hover {
   fill: #162840;
   stroke: #162840;
 }
+
 .map_container {
   position: absolute;
   top: 100px;
   left: 60px;
-  justify-content: flex-end;
   margin: auto;
-  fill: #ffeebf;
-  stroke: grey;
+  fill: rgb(192, 192, 192);
+  stroke: rgba(70, 70, 70, 0.5);
 }
 
 input[id="popup"] {
@@ -482,7 +573,7 @@ input[id="popup"] + label + div > label {
   flex: 1;
   display: block;
   text-align: center;
-  margin-bottom: ;
+  margin-bottom: 16px;
 }
 
 .item0_box {
@@ -536,10 +627,17 @@ input[id="popup"] + label + div > label {
     url("./img/main_footer1.png");
 }
 
-.page_end > h1,
-.page_end > h5 {
+.page_end > h1,h5 {
   position: relative;
   top: 40%;
   text-align: center;
   color: white;
+}
+
+.page_end > h1 {
+  font-size: 3rem;
+}
+
+.page_end > h5 {
+  font-size: 1.5rem;
 }
