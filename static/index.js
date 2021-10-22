@@ -1,31 +1,24 @@
+user_id = ''
 $(document).ready(function () {
     Logincheck();
 });
 
 function Logincheck() {
-    user = localStorage.getItem('id')
-    st = localStorage.getItem('st')
-    if (user == null || st != 1){
-        $('#ID0').hide()
-        $('#LOGOUT0').hide()
-    } else {
-        user_add = `${user} 님 안녕하세요!`
-        $('#ID0').append(user_add)
-        $('#LOGIN0').hide()
-        $('#LOGOUT0').show()
-    }
-}
-function logout() {
-    var st = localStorage.getItem('st')
-    let id = localStorage.getItem('id')
-
     $.ajax({
-        type: "POST",
-        url: "/logout",
-        data: {st_give:st,id_give:id},		
+        type: "GET",
+        url: "/api/login_check",
+        data: {},		
         success: function(response){		
-            localStorage.clear()
-            window.location.reload()
-        },
+            if (response['status'] == 'login'){
+            user_id = response['user_id']
+            temp_html = `${user_id}님 안녕하세요!`
+            $('#ID0').append(temp_html)
+            $('#LOGIN0').text('로그아웃')
+            $('#LOGIN0').prop('href','/logout')
+            } else {
+            $('#LOGIN0').text('로그인')
+            $('#LOGIN0').prop('href','/login')
+            }
+        }, 
 })
 }
