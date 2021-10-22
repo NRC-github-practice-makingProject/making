@@ -11,10 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" >
+        <link rel="stylesheet" href="../static/style.css" >
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="{{ url_for('static', filename='index.js')}}"></script>
+        <script src="../static/index.js"></script>
     </head>
 
     <body>
@@ -32,6 +32,14 @@
             <div class="sidebar">
                 <span class="area_desc">SIDEBAR</span>
             </div>
+            
+        <div class="membership">
+            <ul>
+                <li><p id="ID0"></p></li>
+                <li><a id="LOGOUT0" href="#" onclick="logout()">Log out</a></li>
+                
+            </ul>
+        </div>
 
         <div class="wrap">
             <div class="header">
@@ -43,14 +51,10 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><p id="ID0"></p></li>
-                        <li><a id="LOGIN0"href="/login">로그인</a></li>
                         <li><a href="/">Home</a></li>
                         <li><a href="/service">Service</a></li>
                         <li><a href="/aboutus">About Us</a></li>
                         <li><a href="/FAQ">FAQ</a></li>
-                        <li><a id="LOGOUT0" href="#" onclick="logout()">로그아웃</a></li>
-
                     </ul>
                 </div>
             </div>
@@ -67,35 +71,35 @@
                     <li>
                         <a>
                             <label for="slide05" class="left"></label>
-                            <img src="{{url_for('static', filename='img/slide1.jpg')}}">
+                                <img src="../static/img/slide1.jpg">
                             <label for="slide02" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide01" class="left"></label>
-                            <img src="{{url_for('static', filename='img/slide2.jpg')}}">
+                                <img src="../static/img/slide2.jpg">
                             <label for="slide03" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide02" class="left"></label>
-                            <img src="{{url_for('static', filename='img/slide3.jpg')}}">
+                                <img src="../static/img/slide3.jpg">
                             <label for="slide04" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide03" class="left"></label>
-                            <img src="{{url_for('static', filename='img/slide4.jpg')}}">
+                                <img src="../static/img/slide4.jpg">
                             <label for="slide05" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide04" class="left"></label>
-                            <img src="{{url_for('static', filename='img/slide5.jpg')}}">
+                                <img src="../static/img/slide5.jpg">
                             <label for="slide01" class="right"></label>
                         </a>
                     </li>
