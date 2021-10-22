@@ -4,7 +4,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../static/style.css"
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -12,11 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="../static/style.css" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" >
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="../static/index.js"></script>
-        <link rel="stylesheet" href="../static/column.css">
+        <script src="{{ url_for('static', filename='index.js')}}"></script>
     </head>
 
     <body>
@@ -45,10 +43,14 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><p id="ID0"></p></li>
+                        <li><a id="LOGIN0"href="/login">로그인</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/aboutus">About Us</a></li>
+                        <li><a href="/FAQ">FAQ</a></li>
+                        <li><a id="LOGOUT0" href="#" onclick="logout()">로그아웃</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -65,35 +67,35 @@
                     <li>
                         <a>
                             <label for="slide05" class="left"></label>
-                            <img src="../img/slide1.jpg">
+                            <img src="{{url_for('static', filename='img/slide1.jpg')}}">
                             <label for="slide02" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide01" class="left"></label>
-                            <img src="../img/slide2.jpg">
+                            <img src="{{url_for('static', filename='img/slide2.jpg')}}">
                             <label for="slide03" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide02" class="left"></label>
-                            <img src="../img/slide3.jpg">
+                            <img src="{{url_for('static', filename='img/slide3.jpg')}}">
                             <label for="slide04" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide03" class="left"></label>
-                            <img src="../img/slide4.jpg">
+                            <img src="{{url_for('static', filename='img/slide4.jpg')}}">
                             <label for="slide05" class="right"></label>
                         </a>
                     </li>
                     <li>
                         <a>
                             <label for="slide04" class="left"></label>
-                            <img src="../img/slide5.jpg">
+                            <img src="{{url_for('static', filename='img/slide5.jpg')}}">
                             <label for="slide01" class="right"></label>
                         </a>
                     </li>
@@ -126,7 +128,7 @@
                     <li><div><a href="#">광주</a></div></li>
                     <li><div><a href="#">전북</a></div></li>
                     <li><div><a href="#">전남</a></div></li>
-                    <li><div><a href="#"></a></div></li>
+                    <li><div><a href="#">제주</a></div></li>
                     <li><div><a href="#"></a></div></li>
                 </ul>
         </div>
@@ -135,7 +137,7 @@
             <input type="checkbox" id="popup">
             <label for="popup">지도에서 찾아보기</label>
             <div>
-                <div>
+                <div class="map0">
                     <label for="popup"></label>
                     <div class="map_container">
                         <svg
@@ -251,7 +253,7 @@
     <div class="items0">
          <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -270,7 +272,7 @@
         </div>
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -289,7 +291,7 @@
         </div>
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -308,7 +310,7 @@
         </div>
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -335,7 +337,7 @@
     <div class="items0">
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -354,7 +356,7 @@
         </div>
          <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -373,7 +375,7 @@
         </div>
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -392,7 +394,7 @@
         </div>
         <div class=item0>
             <div class="item0_box">        
-                <img src="../img/1.jpg" class="item0_img">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>

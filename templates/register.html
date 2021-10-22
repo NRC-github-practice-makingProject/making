@@ -1,0 +1,128 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css" >
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menuicon">
+        <header>
+            <div>
+                <span class="area_desc">Spartrip Logo</span>
+                <label for="menuicon" class="menubtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </header>
+        <div class="sidebar">
+            <span class="area_desc">SIDEBAR</span>
+        </div>
+
+    <div class="wrap">
+        <div class="header">
+            <div class="search-container">
+                <input type="text" name="search" placeholder="Search..." class="search-input">
+                <a href="#" class="search-btn">
+                        <i class="fas fa-search"></i>      
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="/static/img/slide1.jpg">
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <img src="/static/img/slide2.jpg">
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="/static/img/slide3.jpg">
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="/static/img/slide4.jpg">
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="/static/img/slide5.jpg">
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="login-form">
+        <div class="register">
+            <div class="int-area">
+                <input type="text" name="ID" id="ID" autocomplete="off" required>
+                <label for="id">USER_ID</label>
+            </div>
+            <div class="int-area">
+                <input type="text" name="EMAIL" id="EMAIL" autocomplete="off" required>
+                <label for="EMAIL">EMAIL</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="PASSWORD" id="PASSWORD" autocomplete="off" required>
+                <label for="PASSWORD">PASSWORD</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="RE_PASSWORD" id="RE_PASSWORD" autocomplete="off" required>
+                <label for="RE_PASSWORD">RE_PASSWORD</label>
+            </div>
+            <div class="btn-area">
+                <button id ="btn" onclick="register()">REGISTER</button>
+            </div>
+        </div>
+            
+   </section>
+        
+    </div>
+    <script src="../static/register.js"></script>
+</body>
+</html>

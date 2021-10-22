@@ -1,118 +1,137 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/FAQ.css">
+<!-- Required meta tags -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<title>FAQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
+<link rel="stylesheet" type="text/css" href="../static/FAQ.css">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="./static/style.css">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+<!-- Required meta tags -->
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<script src="{{ url_for('static', filename='index.js')}}"></script>
 
 
 
-    <style>
-        .FAQ3 {
 
-            /* display: flex;
+<style>
+    .FAQ3 {
+
+        /* display: flex;
             justify-content: center;
             flex-direction: column; */
-            background-color: skyblue;
-               /* height : 1600px; */
-               /* width : 800px; */
-               width: 50%;
-               text-align: center;
-               margin: 50px auto 50px auto;
-               padding : 20px;
-               border-radius: 30px;
+        background-color: skyblue;
+        /* height : 1600px; */
+        /* width : 800px; */
+        width: 50%;
+        text-align: center;
+        margin: 50px auto 50px auto;
+        padding: 20px;
+        border-radius: 30px;
 
 
-        }
+    }
 
-        .FAQ_notice1 {
-            width: 80%;
-            /* height: 300px; */
-            background-color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
+    .FAQ_notice1 {
+        width: 80%;
+        /* height: 300px; */
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 0 auto 30px auto;
+        padding: 10px;
+
+    }
+
+    .FAQ_notice2 {
+        width: 80%;
+        /* height: 300px; */
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 0 auto 30px auto;
+        padding: 10px;
+    }
+
+    .FAQ_notice3 {
+        width: 80%;
+        /* height: 300px; */
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 0 auto 30px auto;
+        padding: 10px;
+    }
+
+    .FAQ_notice4 {
+        width: 80%;
+        /* height: 300px; */
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 0 auto 30px auto;
+        padding: 10px;
+
+    }
+
+    .FAQ_notice5 {
+        width: 80%;
+        /* height: 300px; */
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 0 auto 30px auto;
+        padding: 10px;
+    }
+</style>
 
 
-        }
+<!-- 
+    <input type="checkbox" id="menuicon">
+    <header>
+        <div>
+            <span class="area_desc">Spartrip Logo</span>
+            <label for="menuicon" class="menubtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+ -->
 
-        .FAQ_notice2 {
-            width: 80%;
-            /* height: 300px; */
-            background-color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
-        }
 
-        .FAQ_notice3 {
-            width: 80%;
-            /* height: 300px; */
-            background-color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
-        }
-
-        .FAQ_notice4 {
-            width: 80%;
-            /* height: 300px; */
-            background-color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
-
-        }
-
-        .FAQ_notice5 {
-            width: 80%;
-            /* height: 300px; */
-            background-color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin: 0 auto 30px auto;
-            padding: 10px;
-        }
-    </style>
 
 </head>
 
-<>
+<body>
     <input type="checkbox" id="menuicon">
     <header>
         <div>
@@ -126,8 +145,29 @@
     </header>
     <div class="sidebar">
         <span class="area_desc">SIDEBAR</span>
-    </div>
 
+    </div>
+    <!-- </header>
+        <div class="sidebar">
+            <span class="area_desc">SIDEBAR</span>
+        </div> -->
+
+
+
+    <!-- <div class="wrap">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search..." class="search-input">
+                    <a href="#" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul> -->
+    <!-- <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQ</a></li> -->
 
     <div class="wrap">
         <div class="header">
@@ -139,15 +179,64 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../templates/index.html">Home</a></li>
+                    <li><a href="../templates/service.html">Service</a></li>
+                    <li><a href="../templates/aboutus.html">About Us</a></li>
+                    <li><a href="../templates/FAQ.html">FAQ</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="../static/img/slide1.jpg">
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <img src="../static/img/slide2.jpg">
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="../static/img/slide3.jpg">
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="../static/img/slide4.jpg">
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="../static/img/slide5.jpg">
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- <div class="section">
         <input type="radio" name="slide" id="slide01" checked>
         <input type="radio" name="slide" id="slide02">
         <input type="radio" name="slide" id="slide03">
@@ -193,66 +282,70 @@
                 </li>
             </ul>
         </div>
-    </div>
-
-
+    </div> -->
 
     <div class="FAQ3">
+        <!-- <h1 class="faq-heading">FAQ'S</h1> -->
         <div class="FAQ_notice1">
             <h2>FAQ를 이용하시면 궁금하신 내용을 보다 빠르고 편리하게 찾으실 수 있습니다. <br>
                 궁금증이 해결되지 않으면 1:1문의, 유선문의, 이메일 문의를 이용해 주세요.
             </h2>
         </div>
+        
+        <main>
+            <div class="FAQ_notice4">
+                <section class="faq-container">
+                    <hr class="hr-line">
+                    <div class="faq-one">
+                        <!-- faq question -->
+                        <h1 class="faq-page">동행이라는 것이 무엇 인가요?</h1>
 
-        <div class="FAQ_notice4">
-            <section class="faq-container">
-                <hr class="hr-line">
-                <div class="faq-one">
-                    <!-- faq question -->
-                    <h1 class="faq-page">동행이라는 것이 무엇 인가요?</h1>
-    
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>동행이라는 것은 같은 시간대에 같은 장소를 여행 하려고 계획하는
-                            여행자님들을 위해 소중한 인연을 찾아볼 수 있게 해주는 서비스 입니다.
-                        </p>
+                        <!-- faq answer -->
+                        <div class="faq-body">
+                            <p>동행이라는 것은 같은 시간대에 같은 장소를 여행 하려고 계획하는
+                                여행자님들을 위해 소중한 인연을 찾아볼 수 있게 해주는 서비스 입니다.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <hr class="hr-line">
-    
-                <div class="faq-two">
-    
-                    <!-- faq question -->
-                    <h1 class="faq-page">동행을 취소해야 할때는 어떻게 해야하나요?</h1>
-    
-                    <!-- faq answer -->
-    
-                    <div class="faq-body">
-                        <p>방법은 간단합니다. 배정받은 카카오톡 오픈채팅방에서 불참의사를 밝혀주세요.
-                            하지만 다른 분들을 위해서 일정시작하기 일주일전에는 알려주실수 있으시겠죠?
-                        </p>
+                    <hr class="hr-line">
+
+                    <div class="faq-two">
+
+                        <!-- faq question -->
+                        <h1 class="faq-page">동행을 취소해야 할때는 어떻게 해야하나요?</h1>
+
+                        <!-- faq answer -->
+
+                        <div class="faq-body">
+                            <p>방법은 간단합니다. 배정받은 카카오톡 오픈채팅방에서 불참의사를 밝혀주세요.
+                                하지만 다른 분들을 위해서 일정시작하기 일주일전에는 알려주실수 있으시겠죠?
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <hr class="hr-line">
-    
-    
-                <div class="faq-three">
-    
-                    <!-- faq question -->
-                    <h1 class="faq-page">동행을 같이하는 다른 멤버가 신뢰할 수 있는 사람일까요?</h1>
-    
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>저희는 기본적으로 동행자 별점과 함께 동행하셨던 분들의 동행후기를 제공드리고 있습니다.
-                            동행후기를 확인하여 안전한 동행 이용이 되실수 있기를 바라겠습니다~
-                        </p>
+                    <hr class="hr-line">
+
+
+                    <div class="faq-three">
+
+                        <!-- faq question -->
+                        <h1 class="faq-page">동행을 같이하는 다른 멤버가 신뢰할 수 있는 사람일까요?</h1>
+
+                        <!-- faq answer -->
+                        <div class="faq-body">
+                            <p>저희는 기본적으로 동행자 별점과 함께 동행하셨던 분들의 동행후기를 제공드리고 있습니다.
+                                동행후기를 확인하여 안전한 동행 이용이 되실수 있기를 바라겠습니다~
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <hr class="hr-line">
-            </section>
+                    <hr class="hr-line">
+                </section>
+
+                <script src="../static/FAQ.js"></script>
+            </div>
         </main>
-        <script src="../static/FAQ.js"></script>
-    </div>
+
+
+        <!-- <h1 class="faq-heading">FAQ'S</h1> -->
 
         <div class="FAQ_notice2">
             <img class=img3"
@@ -288,10 +381,6 @@
         </div>
 
     </div>
-
-    <main>
-        <!-- <h1 class="faq-heading">FAQ'S</h1> -->
-
 
     <div class="page_end">
         <h1>Free your Life</h1>
