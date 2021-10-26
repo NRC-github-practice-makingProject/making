@@ -6,45 +6,213 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-
-    <!-- 구글폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <title>spartrip</title>
     <link rel="stylesheet" href="../static/column_page.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <script src="../static/index.js"></script>
+        <link rel="stylesheet" href="../static/colum_modal.css">
+        <link rel="stylesheet" href="../static/star-rating-svg.css">
+        <link rel="stylesheet" href="../static/classic.css">
+        <link rel="stylesheet" href="../static/classic.date.css">
+        <link rel="stylesheet" href="../static/classic.time.css">
 
     <!-- style -->
 
 </head>
 
 <body>
+    <input type="checkbox" id="menuicon">
+            <header>
+                <div>
+                    <span class="area_desc">Spartrip Logo</span>
+                    <label for="menuicon" class="menubtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </header>
+            <div class="sidebar">
+                <span class="area_desc">SIDEBAR</span>
+            </div>
+            
+        <div class="membership">
+            <ul>
+                <li><p id="ID0"></p></li>
+                <li><a id="LOGIN0"></a></li>
+                
+            </ul>
+        </div>
+
+        <div class="wrap">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search..." class="search-input">
+                    <a href="#" class="search-btn">
+                            <i class="fas fa-search"></i>      
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/aboutus">About Us</a></li>
+                        <li><a href="/FAQ">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <input type="radio" name="slide" id="slide05">
+
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <li>
+                        <a>
+                            <label for="slide05" class="left"></label>
+                                <img src="../static/img/slide1.jpg">
+                            <label for="slide02" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide01" class="left"></label>
+                                <img src="../static/img/slide2.jpg">
+                            <label for="slide03" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide02" class="left"></label>
+                                <img src="../static/img/slide3.jpg">
+                            <label for="slide04" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide03" class="left"></label>
+                                <img src="../static/img/slide4.jpg">
+                            <label for="slide05" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide04" class="left"></label>
+                                <img src="../static/img/slide5.jpg">
+                            <label for="slide01" class="right"></label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 <div class="wrap">
-    <div class="jumbotron">
-        <h1 class="display-4">함께 하는 여행의 즐거움</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
+    
 
     <h3>추천 여행지</h3>
     <p>Use the order property to sort the flex items as you like:</p>
     <div class="flex-container" id="colum_container">
         
 </div>
+</div>
+
+<input type="checkbox" id="popup1">
+<label for="popup1"></label>
+<div id="popup_accom">
+    <div id="accom_refer">
+        <label for="popup1"></label>
+            <section class="accom_form">
+                <div>
+                    <div class="accom_area">
+                        <input class="accom_date"type="text" id="accom_date" autocomplete="off" required>
+                        <label for="accom_date">Date:</label>
+                        </div>
+                    <div class="accom_area">
+                        <input class="accom_time" type="text" id="accom_time" autocomplete="off" required>
+                        <label for="accom_time">Time:</label>
+                        </div>
+                    <div class="btn_area">
+                        <button id ="btn_inquiry" onclick="accom0_show_content()">조회</button>
+                        </div>
+                </div>
+            </section>
+    </div>
+    <label for="popup1" id="accom0_label1"></label>
+</div>
+
+<input type="checkbox" id="popup2">
+<label for="popup2"></label>
+<div>
+    <div id="accom_show">
+        <label for="popup2"></label>
+                    <div class="accom0">
+                        <div class="accom0_show">
+                            <div class="accom0_box" id ="accom0_in">
+                                <p class="from-them"></p>                                
+                            </div>
+                        </div>
+                        <div class="accom0_write">
+                            <div class="accom0_write_box" >
+                                <textarea placeholder="동행자 모집내용을 남겨주세요!" id="accom0_content"></textarea>
+                                <img src="../static/img/send.png" class="accom0_send"id="accom0_send" onclick="accom0_write()">
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <label for="popup2" id="accom0_label2"></label>
+</div>
+
+
+<input type="checkbox" id="popup0">
+        <label for="popup0" id="popup_0"></label>
+            <div id="popup_auth">
+                <div>
+                    <label for="popup0"></label>
+                    <div class="review0">
+                        <div class="review0_show">
+                            <div class="review0_box" id ="review0_in">                                
+                            </div>
+                        </div>
+                        <div class="review0_write">
+                            <div class="mystars"></div>
+                            <div class="review0_write_box" >
+                                <textarea placeholder="리뷰를 남겨주세요!" id="review0_content"></textarea>
+                                <img src="../static/img/send.png" class="review0_send"id="review0_send" onclick="review_write()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <label for="popup0"></label>
+            </div>
+
+<div class="page_end">
+    <h1>Free your Life</h1>
+    <h5>Sparta MakingChallenge</h5>
+</div>
 <script src="../static/attr_column_page.js"></script>
+<script src="../static/jquery.star-rating-svg.js"></script>
+<script src="../static/review.js"></script>
+<script src="../static/picker.js"></script>
+<script src="../static/picker.date.js"></script> 
+<script src="../static/picker.time.js"></script>
+<script src="../static/accom.js"></script>
+
 </body>
 
 </html>

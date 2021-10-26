@@ -15,7 +15,7 @@ function login() {
                 localStorage.setItem('id',id)
                 localStorage.setItem('st',st)
 
-                window.location.href='/'
+                history.back();
             } else {
                 alert(response['msg'])
             }
