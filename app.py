@@ -2,6 +2,7 @@ from datetime import timedelta
 from flask import Flask, request, render_template, jsonify, session, make_response
 from pymongo import MongoClient
 import bcrypt
+
 from werkzeug.utils import redirect
 
 
@@ -13,11 +14,26 @@ client = MongoClient('mongodb://4team:team4pass@3.36.13.234', 27017)
 # client = MongoClient('localhost', 27017)
 db = client.dbGilbert
 
+# search.html사용 셋팅 
+@app.route('/search')
+def search():
+    return render_template('search.html')
+
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# 전역 검색 api 제작
+@app.route("/api/search", methods=['POST'])
+def jeju_searching():
+    input = request.form['input_give']
+
+    rest_search = db.rest.find({"title": {"$regex": f".*{input}.*"}}, {"_id": False})
+    attr_search = db.attr.find({"title": {"$regex": f".*{input}.*"}}, {"_id": False})
+    
+    return jsonify({'jeju_search': list(rest_search)+list(attr_search)}), 200
+  
 
 @app.route('/api/login_check', methods=['GET'])
 def login_check():
