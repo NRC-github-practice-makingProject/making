@@ -15,12 +15,30 @@ client = MongoClient('mongodb://4team:team4pass@3.36.13.234', 27017)
 db = client.dbGilbert
 
 # search.html사용 셋팅
+ 
+#  랜덤기능 구현
+@app.route("/api/rrandomDisplay", methods=['POST'])
+def rrandomDisplay():
+    input_db = db.rest.find({}, {'_id': False})
+ 
+    return jsonify({'rrandomDisplay': list(input_db)}), 200
+
+@app.route("/api/arandomDisplay", methods=['POST'])
+def arandomDisplay():
+    input_db = db.attr.find({}, {'_id': False})
+ 
+    return jsonify({'arandomDisplay': list(input_db)}), 200
+
+#  랜덤기능 구현
 
 
 @app.route('/search')
 def search():
     return render_template('search.html')
 
+@app.route('/randomtest')
+def randomtest():
+    return render_template('randomtest.html')
 # 전역 검색 api 제작
 
 

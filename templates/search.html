@@ -312,12 +312,12 @@
         // alert('input : ' + parasearch_input);
     </script>
 
-    
-<script>
-    $(document).ready(function () {
-        showSearches_R()
-    });
-</script>
+
+    <script>
+        $(document).ready(function () {
+            showSearches_R()
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
@@ -335,53 +335,53 @@
     <script>
         function showSearches_R() {
 
-        let input = parasearch_input
-        $('#search-box').empty()
-        $.ajax({
-            type: "POST",
-            url: "/api/search",
-            data: { input_give: input },
-            success: function (response) {
-                console.log(response)
-                let jeju_searchs = response['jeju_search']
+            let input = parasearch_input
+            $('#search-box').empty()
+            $.ajax({
+                type: "POST",
+                url: "/api/search",
+                data: { input_give: input },
+                success: function (response) {
+                    console.log(response)
+                    let jeju_searchs = response['jeju_search']
 
-                for (let i = 0; i < jeju_searchs.length; i++) {
-                    let title = jeju_searchs[i]['title']
-                    let img = jeju_searchs[i]['img']
-                    let sub_title = jeju_searchs[i]['sub_title']
-                    let item_tags1 = jeju_searchs[i]['item_tags1']
-                    let item_tags2 = jeju_searchs[i]['item_tags2']
-                    let item_tags3 = jeju_searchs[i]['item_tags3']
-                    let sub_item_tag = jeju_searchs[i]['sub_item_tag']
-                    let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
-                    let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
-                    let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
-                    let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
+                    for (let i = 0; i < jeju_searchs.length; i++) {
+                        let title = jeju_searchs[i]['title']
+                        let img = jeju_searchs[i]['img']
+                        let sub_title = jeju_searchs[i]['sub_title']
+                        let item_tags1 = jeju_searchs[i]['item_tags1']
+                        let item_tags2 = jeju_searchs[i]['item_tags2']
+                        let item_tags3 = jeju_searchs[i]['item_tags3']
+                        let sub_item_tag = jeju_searchs[i]['sub_item_tag']
+                        let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
+                        let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
+                        let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
+                        let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
 
-                    if (sub_item_tag == null) {
-                        sub_item_tag = '　'
-                        sub_item_tag2 = '　'
-                        sub_item_tag3 = '　'
-                        sub_item_tag4 = '　'
-                        sub_item_tag5 = '　'
-                    } else if (sub_item_tag2 == null) {
-                        sub_item_tag2 = ''
-                        sub_item_tag3 = ''
-                        sub_item_tag4 = ''
-                        sub_item_tag5 = ''
-                    } else if (sub_item_tag3 == null) {
-                        sub_item_tag3 = ''
-                        sub_item_tag4 = ''
-                        sub_item_tag5 = ''
-                    } else if (sub_item_tag4 == null) {
-                        sub_item_tag4 = ''
-                        sub_item_tag5 = ''
-                    }
-                    else if (sub_item_tag5 == null) {
-                        sub_item_tag5 = ''
-                    }
+                        if (sub_item_tag == null) {
+                            sub_item_tag = '　'
+                            sub_item_tag2 = '　'
+                            sub_item_tag3 = '　'
+                            sub_item_tag4 = '　'
+                            sub_item_tag5 = '　'
+                        } else if (sub_item_tag2 == null) {
+                            sub_item_tag2 = ''
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag3 == null) {
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag4 == null) {
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        }
+                        else if (sub_item_tag5 == null) {
+                            sub_item_tag5 = ''
+                        }
 
-                    let temp_html = `
+                        let temp_html = `
             <div class="card">
         <img class="card-img-top"
              src="${img}"
@@ -395,14 +395,14 @@
         <button> 리뷰 </button>
     </div>
     `
-                    $('#search-box').append(temp_html)
+                        $('#search-box').append(temp_html)
 
+                    }
                 }
-            }
 
-        })
+            })
 
-    }
+        }
     </script>
 
     <script>
@@ -473,37 +473,8 @@
                     }
                 }
 
-                // success: function (response) {
 
-                //     let jeju_searchs = response['jeju_search']
 
-                //     for (let i = 0; i < jeju_searchs.length; i++) {
-                //         let title = jeju_searchs[i]['title']
-                //         let img = jeju_searchs[i]['img']
-                //         let sub_title = jeju_searchs[i]['sub_title']
-                //         let url = jeju_searchs[i]['url']
-                //         let item_tag1 = jeju_searchs[i]['item_tag1']
-
-                //         // console.log(title, image, desc, url, comment)
-
-                //         let temp_html = `<div class= "card" >
-                //                             <img class = "card-img-top"
-                //                         src = "${img}"
-                //                         alt = "Card image cap" >
-                //                             <div class = "card-body" >
-                //                             <a target = "_blank"
-                //                         href = ""
-                //                         class = "card-title">${title}</a>
-                //                             <p class="card-text">${sub_title}</p>
-                //                             <p class="card-text comment">${item_tag1}</p>
-                //                             </div>
-                //                         </div>`
-
-                //         $('#search-box').append(temp_html)
-
-                //     }
-
-                // }
 
             })
 
@@ -647,6 +618,8 @@
             </label>
         </div>
     </a>
+    <br>
+    <br>
     <br>
     <br>
     <br>
