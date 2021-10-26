@@ -316,73 +316,183 @@ input[id="menuicon"]:checked ~ header .menubtn {
 }
 
 @keyframes slide01 {
-  0% {left:0%;}
-  18% {left:0%;}
-  20% {left:-100%;}
-  38% {left:-100%;}
-  40% {left:-200%;}
-  58% {left:-200%;}
-  60% {left:-300%;}
-  78% {left:-300%;}
-  80% {left:-400%;}
-  98% {left:-400%;}
-  100% {left:0%;}
+  0% {
+    left: 0%;
+  }
+  18% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  38% {
+    left: -100%;
+  }
+  40% {
+    left: -200%;
+  }
+  58% {
+    left: -200%;
+  }
+  60% {
+    left: -300%;
+  }
+  78% {
+    left: -300%;
+  }
+  80% {
+    left: -400%;
+  }
+  98% {
+    left: -400%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 @keyframes slide02 {
-  0% {left:0%;}
-  18% {left:0%;}
-  20% {left:-100%;}
-  38% {left:-100%;}
-  40% {left:-200%;}
-  58% {left:-200%;}
-  60% {left:-300%;}
-  78% {left:-300%;}
-  80% {left:100%;}
-  98% {left:100%;}
-  100% {left:0%;}
+  0% {
+    left: 0%;
+  }
+  18% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  38% {
+    left: -100%;
+  }
+  40% {
+    left: -200%;
+  }
+  58% {
+    left: -200%;
+  }
+  60% {
+    left: -300%;
+  }
+  78% {
+    left: -300%;
+  }
+  80% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 @keyframes slide03 {
-  0% {left:0%;}
-  18% {left:0%;}
-  20% {left:-100%;}
-  38% {left:-100%;}
-  40% {left:-200%;}
-  58% {left:-200%;}
-  60% {left:200%;}
-  78% {left:200%;}
-  80% {left:100%;}
-  98% {left:100%;}
-  100% {left:0%;}
+  0% {
+    left: 0%;
+  }
+  18% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  38% {
+    left: -100%;
+  }
+  40% {
+    left: -200%;
+  }
+  58% {
+    left: -200%;
+  }
+  60% {
+    left: 200%;
+  }
+  78% {
+    left: 200%;
+  }
+  80% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 @keyframes slide04 {
-  0% {left:0%;}
-  18% {left:0%;}
-  20% {left:-100%;}
-  38% {left:-100%;}
-  40% {left:300%;}
-  58% {left:300%;}
-  60% {left:200%;}
-  78% {left:200%;}
-  80% {left:100%;}
-  98% {left:100%;}
-  100% {left:0%;}
+  0% {
+    left: 0%;
+  }
+  18% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  38% {
+    left: -100%;
+  }
+  40% {
+    left: 300%;
+  }
+  58% {
+    left: 300%;
+  }
+  60% {
+    left: 200%;
+  }
+  78% {
+    left: 200%;
+  }
+  80% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 @keyframes slide05 {
-  0% {left:0%;}
-  18% {left:0%;}
-  20% {left:400%;}
-  38% {left:400%;}
-  40% {left:300%;}
-  58% {left:300%;}
-  60% {left:200%;}
-  78% {left:200%;}
-  80% {left:100%;}
-  98% {left:100%;}
-  100% {left:0%;}
+  0% {
+    left: 0%;
+  }
+  18% {
+    left: 0%;
+  }
+  20% {
+    left: 400%;
+  }
+  38% {
+    left: 400%;
+  }
+  40% {
+    left: 300%;
+  }
+  58% {
+    left: 300%;
+  }
+  60% {
+    left: 200%;
+  }
+  78% {
+    left: 200%;
+  }
+  80% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 .contents_head {
@@ -577,7 +687,7 @@ input[id="popup"] + label + div > label {
 }
 
 .item0_box {
-  width: 250px;
+  width: 300px;
   margin: auto;
   background-color: white;
   box-shadow: 3px 4px 5px 0 rgb(2 2 2 / 40%);
@@ -627,7 +737,8 @@ input[id="popup"] + label + div > label {
     url("./img/main_footer1.png");
 }
 
-.page_end > h1,h5 {
+.page_end > h1,
+h5 {
   position: relative;
   top: 40%;
   text-align: center;

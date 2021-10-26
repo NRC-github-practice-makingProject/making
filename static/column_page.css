@@ -3,15 +3,8 @@
   margin: auto;
 }
 
-.comment {
-  color: blue;
-  font-weight: bold;
-}
-
-.jumbotron {
-  background-color: darkkhaki;
-  margin-bottom: 200px;
-  margin-bottom: 10%;
+.wrap h3 {
+  margin-top: 70px;
 }
 
 .flex-container {
@@ -87,4 +80,8 @@
   border: 0px;
   background-color: #fff;
   font-weight: 600;
+}
+
+.card button:focus {
+  outline: none;
 }
