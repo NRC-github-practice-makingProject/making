@@ -1,0 +1,657 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+
+    <title> 검색_기능_테스트</title>
+
+    <style>
+        .search-container {
+            background: white;
+            width: 300px;
+            height: 30px;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.8s;
+            box-shadow: 1px 2px rgba(116, 125, 136, 0.2);
+            align-items: center;
+        }
+
+        .search-container:hover>.search-input {
+            width: 300px;
+        }
+
+        .search-container .search-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 0px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: 0.8s;
+        }
+
+        .search-container .search-btn .fas {
+            color: white;
+        }
+
+        @keyframes hoverShake {
+            0% {
+                transform: skew(0deg, 0deg);
+            }
+
+            25% {
+                transform: skew(5deg, 5deg);
+            }
+
+            75% {
+                transform: skew(-5deg, -5deg);
+            }
+
+            100% {
+                transform: skew(0deg, 0deg);
+            }
+        }
+
+        .search-container:hover {
+            animation: hoverShake 0.15s linear 3;
+        }
+
+        /* google 클론 */
+
+        h1 {
+            text-align: center;
+            margin-top: 230px;
+            font-size: 90px;
+        }
+
+        h1 span:nth-child(1) {
+            color: #4285f4;
+        }
+
+        h1 span:nth-child(2) {
+            color: #ea4335;
+        }
+
+        h1 span:nth-child(3) {
+            color: #fbbc05;
+        }
+
+        h1 span:nth-child(4) {
+            color: #4285f4;
+        }
+
+        h1 span:nth-child(5) {
+            color: #34a853;
+        }
+
+        h1 span:nth-child(6) {
+            color: #ea4335;
+        }
+
+        .search-bar {
+            width: 500px;
+        }
+
+        :root {
+            --dark-color: #232323;
+            --light-color: #F4F4F4;
+
+            /*  
+    Feel free to change the variable '--circle-size' in order to scale circle and search-bar with absolute and relative units ^-^  
+*/
+            --circle-size: 200px;
+            --circle-color: var(--light-color);
+
+            --input-height: calc(var(--circle-size) * .6);
+            --input-placeholder-color: hsl(0, 0%, 74%);
+            /*
+    Change --input-width scalability if You think that the width of search-bar is too large/small :D
+*/
+            --input-width: calc(var(--circle-size) * 2);
+            --input-color: hsl(226, 45%, 43%);
+
+            --cross-size: calc(var(--circle-size) * .3);
+            --cross-color: hsl(0, 0%, 27%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark-color);
+            font-family: Helvetica, sans-serif;
+        }
+
+        .align-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .search-container1>input[type='checkbox'] {
+            display: none;
+        }
+
+        .search-container1 input[type="checkbox"]:checked~label[for="search-trigger"] div {
+            margin-left: calc(var(--input-width) * .5);
+        }
+
+        .search-container1 input[type="checkbox"]:checked~.search-field input[type="text"] {
+            width: var(--input-width);
+        }
+
+        .search-container1 input[type="checkbox"]:checked~.search-field {
+            margin-right: calc(var(--input-width) * -.5);
+        }
+
+        .search-container1 input[type="checkbox"]:checked~label .search-toggle::before {
+            top: 48%;
+            left: 50%;
+            height: calc(var(--cross-size) / 5);
+            width: calc(var(--cross-size) * 2);
+            transform: translateX(-50%) rotate(-47deg);
+            border-radius: calc(var(--cross-size) * .1);
+        }
+
+        .search-container1 input[type="checkbox"]:checked~label .search-toggle::after {
+            top: 21%;
+            left: 50%;
+            height: calc(var(--cross-size) * 2);
+            transform: translateX(-50%) rotate(-43deg);
+        }
+
+        .search-container1>label[for='search-trigger']>div {
+            position: absolute;
+            top: 50%;
+            margin-left: calc(var(--input-height) * -.5);
+            transform: translateY(-50%);
+            width: var(--circle-size);
+            height: var(--circle-size);
+            background-color: var(--circle-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: margin 650ms ease;
+        }
+
+        .search-container1>label[for='search-trigger']>div::before,
+        .search-container1>label[for='search-trigger']>div::after {
+            content: '';
+            position: absolute;
+        }
+
+        .search-container1 .search-field {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+            transition: margin 500ms ease;
+        }
+
+        .search-container1 input[type="text"] {
+            height: var(--input-height);
+            width: 0;
+            background-color: var(--input-color);
+            font-size: calc(var(--circle-size) * .17);
+            color: var(--light-color);
+            outline: none;
+            border: 0 none;
+            transition: width 500ms ease;
+        }
+
+        .search-container1 input[type="text"]::placeholder {
+            color: var(--input-placeholder-color);
+        }
+
+        .search-container1 .search-field::before,
+        .search-container1 .search-field::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: var(--input-height);
+            width: var(--input-height);
+            background-color: var(--input-color);
+            border-radius: 50%;
+            z-index: -2;
+            cursor: text;
+        }
+
+        .search-container1 .search-field::before {
+            left: calc(var(--input-height) * -.5);
+        }
+
+        .search-container1 .search-field::after {
+            right: calc(var(--input-height) * -.5);
+        }
+
+        .search-container1 label .search-toggle::before,
+        .search-container1 label .search-toggle::after {
+            content: '';
+            position: absolute;
+            height: var(--cross-size);
+            width: calc(var(--cross-size) / 5);
+            background-color: var(--cross-color);
+            z-index: 1;
+            transition: all 500ms ease;
+        }
+
+        .search-container1 label .search-toggle::after {
+            top: 50%;
+            left: 62.5%;
+            transform: translateX(-50%) rotate(-35deg);
+            border-radius: calc(var(--cross-size) * .1);
+        }
+
+        .search-container1 label .search-toggle::before {
+            width: var(--cross-size);
+            top: calc(50% - calc(var(--cross-size) * .9));
+            left: calc(62.5% - calc(var(--cross-size) * .7));
+            transform: translateX(-50%) rotate(-35deg);
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        function getParameter(strParamName) {
+            var arrResult = null;
+            if (strParamName) {
+                arrResult = location.search.match(new RegExp("[&?]" + strParamName + "=(.*?)(&|$)"));
+                return arrResult && arrResult[1] ? arrResult[1] : null;
+            }
+        }
+
+        var p_name = getParameter("q");
+        // alert('input : ' +  p_name );
+        var parasearch_input = decodeURIComponent(p_name);
+
+        $('input[name=q]').attr('value', 1);
+        $('input[name=q]').attr('value', parasearch_input);
+        // var p_age = getParameter("age");
+        // alert('Name : ' + p_name + ' / Age :' + p_age); 
+        // alert('input : ' + parasearch_input);
+    </script>
+
+    
+<script>
+    $(document).ready(function () {
+        showSearches_R()
+    });
+</script>
+
+    <script>
+        $(document).ready(function () {
+            if (parasearch_input == null) {
+                $('input[name=q]').attr('value', '');
+            } else {
+                $('input[name=q]').attr('value', parasearch_input);
+            }
+
+            // $("#input_search").keypress()
+        });
+
+    </script>
+
+    <script>
+        function showSearches_R() {
+
+        let input = parasearch_input
+        $('#search-box').empty()
+        $.ajax({
+            type: "POST",
+            url: "/api/search",
+            data: { input_give: input },
+            success: function (response) {
+                console.log(response)
+                let jeju_searchs = response['jeju_search']
+
+                for (let i = 0; i < jeju_searchs.length; i++) {
+                    let title = jeju_searchs[i]['title']
+                    let img = jeju_searchs[i]['img']
+                    let sub_title = jeju_searchs[i]['sub_title']
+                    let item_tags1 = jeju_searchs[i]['item_tags1']
+                    let item_tags2 = jeju_searchs[i]['item_tags2']
+                    let item_tags3 = jeju_searchs[i]['item_tags3']
+                    let sub_item_tag = jeju_searchs[i]['sub_item_tag']
+                    let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
+                    let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
+                    let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
+                    let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
+
+                    if (sub_item_tag == null) {
+                        sub_item_tag = '　'
+                        sub_item_tag2 = '　'
+                        sub_item_tag3 = '　'
+                        sub_item_tag4 = '　'
+                        sub_item_tag5 = '　'
+                    } else if (sub_item_tag2 == null) {
+                        sub_item_tag2 = ''
+                        sub_item_tag3 = ''
+                        sub_item_tag4 = ''
+                        sub_item_tag5 = ''
+                    } else if (sub_item_tag3 == null) {
+                        sub_item_tag3 = ''
+                        sub_item_tag4 = ''
+                        sub_item_tag5 = ''
+                    } else if (sub_item_tag4 == null) {
+                        sub_item_tag4 = ''
+                        sub_item_tag5 = ''
+                    }
+                    else if (sub_item_tag5 == null) {
+                        sub_item_tag5 = ''
+                    }
+
+                    let temp_html = `
+            <div class="card">
+        <img class="card-img-top"
+             src="${img}"
+             alt="Card image cap">
+        <p class="card-title">${title}</p>
+        <p class="card-text">${sub_title}</p>
+        <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
+        <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
+        <button> 좋아요 </button>
+        <button> 동행 </button>
+        <button> 리뷰 </button>
+    </div>
+    `
+                    $('#search-box').append(temp_html)
+
+                }
+            }
+
+        })
+
+    }
+    </script>
+
+    <script>
+        function showSearches() {
+
+            let input = $('#input_search').val()
+            $('#search-box').empty()
+            $.ajax({
+                type: "POST",
+                url: "/api/search",
+                data: { input_give: input },
+                success: function (response) {
+                    console.log(response)
+                    let jeju_searchs = response['jeju_search']
+
+                    for (let i = 0; i < jeju_searchs.length; i++) {
+                        let title = jeju_searchs[i]['title']
+                        let img = jeju_searchs[i]['img']
+                        let sub_title = jeju_searchs[i]['sub_title']
+                        let item_tags1 = jeju_searchs[i]['item_tags1']
+                        let item_tags2 = jeju_searchs[i]['item_tags2']
+                        let item_tags3 = jeju_searchs[i]['item_tags3']
+                        let sub_item_tag = jeju_searchs[i]['sub_item_tag']
+                        let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
+                        let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
+                        let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
+                        let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
+
+                        if (sub_item_tag == null) {
+                            sub_item_tag = '　'
+                            sub_item_tag2 = '　'
+                            sub_item_tag3 = '　'
+                            sub_item_tag4 = '　'
+                            sub_item_tag5 = '　'
+                        } else if (sub_item_tag2 == null) {
+                            sub_item_tag2 = ''
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag3 == null) {
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag4 == null) {
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        }
+                        else if (sub_item_tag5 == null) {
+                            sub_item_tag5 = ''
+                        }
+
+                        let temp_html = `
+                <div class="card">
+            <img class="card-img-top"
+                 src="${img}"
+                 alt="Card image cap">
+            <p class="card-title">${title}</p>
+            <p class="card-text">${sub_title}</p>
+            <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
+            <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
+            <button> 좋아요 </button>
+            <button> 동행 </button>
+            <button> 리뷰 </button>
+        </div>
+        `
+                        $('#search-box').append(temp_html)
+
+                    }
+                }
+
+                // success: function (response) {
+
+                //     let jeju_searchs = response['jeju_search']
+
+                //     for (let i = 0; i < jeju_searchs.length; i++) {
+                //         let title = jeju_searchs[i]['title']
+                //         let img = jeju_searchs[i]['img']
+                //         let sub_title = jeju_searchs[i]['sub_title']
+                //         let url = jeju_searchs[i]['url']
+                //         let item_tag1 = jeju_searchs[i]['item_tag1']
+
+                //         // console.log(title, image, desc, url, comment)
+
+                //         let temp_html = `<div class= "card" >
+                //                             <img class = "card-img-top"
+                //                         src = "${img}"
+                //                         alt = "Card image cap" >
+                //                             <div class = "card-body" >
+                //                             <a target = "_blank"
+                //                         href = ""
+                //                         class = "card-title">${title}</a>
+                //                             <p class="card-text">${sub_title}</p>
+                //                             <p class="card-text comment">${item_tag1}</p>
+                //                             </div>
+                //                         </div>`
+
+                //         $('#search-box').append(temp_html)
+
+                //     }
+
+                // }
+
+            })
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <input type="checkbox" id="menuicon">
+    <header>
+        <div>
+            <span class="area_desc">Spartrip Logo</span>
+            <label for="menuicon" class="menubtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+    <div class="sidebar">
+        <span class="area_desc">SIDEBAR</span>
+    </div>
+
+    <div class="wrap">
+        <div class="header">
+
+            <!-- <form action="/search" " method=" GET">
+                <div class="search-container">
+
+                    <label class="search-field"></label>
+                        <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q"
+                        placeholder="Search..." class="search-input">
+                    <div class="corners"></div>
+                    </label>
+                    <i class="fas fa-search" onclick="showSearches();"></i>
+
+                </div>
+            </form> -->
+
+            <!-- <div class="search-container">
+                <input id="input_search" type="text" name="search" placeholder="Search..." class="search-input">
+                <a href="/search" class="search-btn">
+                    <i class="fas fa-search" onclick="showSearches(); Open()"></i>
+                </a>
+            </div> -->
+
+            <!-- // 수정한 부분 시작 -->
+            <!-- <div id="post-box" class="form-post" style="display:none">
+                <table id="search-table" class="table table-striped">
+                    <thead>
+                        
+                    </thead>
+                    <tbody> </tbody>
+                </table>
+
+                <button type="button" class="btn btn-primary" onclick="Close()">닫기</button>
+
+            </div> -->
+
+            <!-- // 수정한 부분 끝 -->
+
+            <div class="nav">
+                <ul>
+                    <li>
+                        <p id="ID0"></p>
+                    </li>
+                    <li><a id="LOGIN0" href="/login"></a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/service">Service</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/FAQ">FAQ</a></li>
+                    <li><a id="LOGOUT0" href="#" onclick="logout()">로그아웃</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide1.jpg')}}">
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide2.jpg')}}">
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide3.jpg')}}">
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide4.jpg')}}">
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide5.jpg')}}">
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <h1>
+            <span>n</span><span>o</span><span>m</span><span>a</span><span>d</span><span>K</span>
+        </h1> -->
+    <a>
+        <!-- <form action="/search" method="GET"> -->
+        <div class="search-container1 align-center">
+            <input type="checkbox" id="search-trigger">
+            <label for="search-trigger">
+                <div class="search-toggle"></div>
+            </label>
+            <label class="search-field">
+                <input id="input_search" type="text" value="" name="q"
+                    onkeyup="if(window.event.keyCode==13){showSearches()}" placeholder="풍경 또는 즐거움..">
+                <div class="corners"></div>
+            </label>
+        </div>
+    </a>
+    <br>
+    <br>
+    <br>
+    <div id="search-box" class="card-columns">
+    </div>
+
+
+</body>
