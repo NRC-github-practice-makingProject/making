@@ -36,7 +36,7 @@
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='index.js')}}"></script>
 
-    <title> 검색_기능_테스트</title>
+    <title> 검색 </title>
 
     <style>
         .search-container {
@@ -498,9 +498,11 @@
     </div>
     <div class="membership">
         <ul>
-            <li><p id="ID0"></p></li>
+            <li>
+                <p id="ID0"></p>
+            </li>
             <li><a id="LOGIN0"></a></li>
-            
+
         </ul>
     </div>
     <div class="wrap">
@@ -540,7 +542,7 @@
             </div> -->
 
             <!-- // 수정한 부분 끝 -->
-            
+
             <div class="nav">
                 <ul>
                     <li>
@@ -605,23 +607,26 @@
         </div>
     </div>
 
+
     <!-- <h1>
             <span>n</span><span>o</span><span>m</span><span>a</span><span>d</span><span>K</span>
         </h1> -->
-    <a>
-        <!-- <form action="/search" method="GET"> -->
-        <div class="search-container1 align-center">
-            <input type="checkbox" id="search-trigger">
-            <label for="search-trigger">
-                <div class="search-toggle"></div>
-            </label>
-            <label class="search-field">
-                <input id="input_search" type="text" value="" name="q"
-                    onkeyup="if(window.event.keyCode==13){showSearches()}" placeholder="풍경 또는 즐거움..">
-                <div class="corners"></div>
-            </label>
-        </div>
-    </a>
+    <div>
+        <a>
+            <!-- <form action="/search" method="GET"> -->
+            <div class="search-container1 align-center">
+                <input type="checkbox" id="search-trigger">
+                <label for="search-trigger">
+                    <div class="search-toggle"></div>
+                </label>
+                <label class="search-field">
+                    <input id="input_search" type="text" value="" name="q"
+                        onkeyup="if(window.event.keyCode==13){showSearches()}" placeholder="풍경 또는 즐거움..">
+                    <div class="corners"></div>
+                </label>
+            </div>
+        </a>
+    </div>
     <br>
     <br>
     <br>

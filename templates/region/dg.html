@@ -1,0 +1,121 @@
+<!-- 공통 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<!-- 공통 -->
+    <title> JEJU </title>
+</head>
+
+<body>
+<!-- 공통 -->
+    <input type="checkbox" id="menuicon">
+    <header>
+        <div>
+            <span class="area_desc">Spartrip Logo</span>
+            <label for="menuicon" class="menubtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+    <div class="sidebar">
+        <span class="area_desc">SIDEBAR</span>
+    </div>
+    <div class="membership">
+        <ul>
+            <li>
+                <p id="ID0"></p>
+            </li>
+            <li><a id="LOGIN0"></a></li>
+
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="header">
+
+            <form action="/search" " method=" GET">
+                <div class="search-container">
+
+                    <label class="search-field"></label>
+                    <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q"
+                        placeholder="Search..." class="search-input">
+                    <div class="corners"></div>
+                    </label>
+                    <i class="fas fa-search" onclick="showSearches();"></i>
+
+                </div>
+            </form>
+
+
+
+            <div class="nav">
+                <ul>
+                    <li>
+                        <p id="ID0"></p>
+                    </li>
+                    <!-- <li><a id="LOGIN0" href="/login">로그인</a></li> -->
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/service">Service</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/FAQ">FAQ</a></li>
+                    <!-- <li><a id="LOGOUT0" href="#" onclick="logout()">로그아웃</a></li> -->
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <input type="radio" name="slide" id="slide05">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide05" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide1.jpg')}}">
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide2.jpg')}}">
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide3.jpg')}}">
+                        <label for="slide04" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide4.jpg')}}">
+                        <label for="slide05" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide04" class="left"></label>
+                        <img src="{{url_for('static', filename='img/slide5.jpg')}}">
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!-- 공통 -->
