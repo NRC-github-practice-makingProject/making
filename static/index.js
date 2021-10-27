@@ -3,6 +3,8 @@ $(document).ready(function () {
     Logincheck();
     $('#accom_show').hide()
     $('#accom_refer').show()
+    $("html, body").animate({ scrollTop: 0 }, "slow"); 
+
 });
 check = ''
 

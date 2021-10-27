@@ -1,5 +1,6 @@
 star = 3
 title_ = ""
+user_id = ''
 
 $(".mystars").starRating({
     initialRating:3 ,
@@ -39,6 +40,51 @@ function review_write() {
         })
     }
 
+modi_count 
+function review_modi(count,title) {
+    id_ = user_id
+    modi_count = count
+    
+    $.ajax({
+        type: "POST",
+        url: "/api/review_modi",
+        data: {count_give:count,id_give:id_,title_give:title},		
+        success: function(response){	
+            if (response['result'] == 'success'){
+                modi = response['modi']
+                star = modi['star']
+                text = modi['text']
+                $(".mystars").starRating('setRating',star,true)
+                $('#review0_content').val(text)
+                $('#review0_send').removeAttr('onclick')
+                $('#review0_send').attr('onclick','review_modi_write()')
+
+                }else {
+                alert(response['msg'])
+            }
+        },
+    })    
+}
+
+function review_modi_write(){
+    let text = $('#review0_content').val()
+        let text_ = text.replace(/\n+/g, "<br>")
+        $.ajax({
+            type: "POST",
+            url: "/api/review_modi_write",
+            data: {title_give:title_,text_give:text_,star_give:star,count_give:modi_count},		
+            success: function(response){	
+                if (response['result'] == 'success'){
+                    alert(response['msg'])
+                    $('#review0_send').removeAttr('onclick')
+                    $('#review0_send').attr('onclick','review_write()')
+                    window.location.reload()
+                }else {
+                    alert(response['msg'])
+                }
+            },
+        })
+}
 
 
 function review0_show(title) {
@@ -59,6 +105,7 @@ function review0_show(title) {
                                 let review_text = review[i]['text']
                                 let review_star = review[i]['star']
                                 let review_date = review[i]['date']
+                                let review_count = review[i]['count']
                                 if (review_star == '1'){
                                     review_star = '⭐️'
                                 }else if (review_star == '1.5' || review_star == '2'){
@@ -73,10 +120,9 @@ function review0_show(title) {
 
                                 let temp_html = `<p class="from-them">${review_star}<br>
                                 ${review_id} | ${review_date}<br>
-                                ${review_text}</p>`
-                                
+                                ${review_text}<br>
+                                <span onclick="review_modi('${review_count}','${title_}')">리뷰수정</span> | <span onclick="review_del('${review_count}','${title_}')">삭제</span>  </p>`                                                                
                                 $('#review0_in').append(temp_html)
-                                setTimeout(() => {}, 3000)
 
                                 $('#popup_auth').show()
                             }
@@ -91,3 +137,19 @@ function review0_show(title) {
     }
 }
 
+function review_del(count,title) {
+    id = user_id
+    $.ajax({
+        type: "POST",
+        url: "/api/review_del",
+        data: {count_give:count,id_give:id,title_give:title},		
+        success: function(response){	
+            if (response['result'] == 'success'){
+                alert(response['msg'])
+                window.location.reload()
+            }else {
+                alert(response['msg'])
+            }
+        },
+    })
+}
