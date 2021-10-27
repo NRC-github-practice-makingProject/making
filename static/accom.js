@@ -34,9 +34,13 @@ function accom0_write() {
 function accom0_show(title){
     title_ = title
     check_ = Logincheck()
+    $('#accom_todate').val('')
+    $('#accom_fromdate').val('')
     if (check == 'true') {
         document.getElementById('popup1').checked = true;
         $('#accom_refer').show()
+        $('#accom0_send').removeAttr('onclick')
+        $('#accom0_send').attr('onclick','accom0_write()')
     } else {
     alert('로그인이 필요한 서비스입니다.')
     window.location.href = '/login'
@@ -49,15 +53,16 @@ function accom0_show_content() {
     $('#accom_show').show()
     $('#accom_refer').hide()
     $('#accom0_in').empty()
+    $('#accom0_content').val('')
+    
     todate = $('#accom_todate').val()
     fromdate = $('#accom_fromdate').val()
     $.ajax({
         type: "POST",
         url: "/api/accom_show",
         data: {title_give:title_,todate_give:todate,fromdate_give:fromdate},		
-       success: function(response){	
+        success: function(response){	
             if (response['result'] == 'success'){
-                console.log(response['accom'])
                     let accom = response['accom']
                     for(let i=0; i < accom.length ; i++){
                         let accom_name = accom[i]['name']
@@ -67,15 +72,16 @@ function accom0_show_content() {
                         let accom_phone = accom[i]['phone']
                         let accom_todate = accom[i]['todate']
                         let accom_fromdate = accom[i]['fromdate']
+                        let accom_count = accom[i]['count']
                         
                         let temp_html = `<p class="from-them">${accom_id}<br>
                         ${accom_name} | ${accom_age} | ${accom_phone}<br>
                         ${accom_todate} ~ ${accom_fromdate} 일정<br>
-                        ${accom_text}</p>`
+                        ${accom_text}<br>
+                        <span onclick="accom_modi('${accom_count}','${title_}')">동행수정</span> | <span onclick="accom_del('${accom_count}','${title_}')">삭제</span><br>
+                        <span onclick="accom0_in_show_content('${accom_count}','${title_}')">📌참가 신청하기</span></p>`                                                         
                         
                         $('#accom0_in').append(temp_html)
-                        $('#accom_date').empty()
-                        $('#accom_time').empty()
                     }
                 } else {
                     alert('Loding Error')
@@ -84,5 +90,141 @@ function accom0_show_content() {
     })                               
 }
 
+in_count = 0
+in_recount = 1
+in_text
+function accom0_in_show_content(count,title_) {
+    $('#accom0_in').empty()
+    $('#accom0_content').val('')
+    in_count = count
+    $.ajax({
+        type: "POST",
+        url: "/api/accom_in_show",
+        data: {title_give:title_,count_give:count},		
+        success: function(response){	
+            if (response['result'] == 'success'){
+                    let accom = response['accom']
+                    
+                    for(let i=0; i < accom.length ; i++){
+                        let accom_name = accom[i]['name']
+                        in_text = accom[i]['text']
+                        let accom_age = accom[i]['age']
+                        let accom_id = accom[i]['id']
+                        let accom_phone = accom[i]['phone']
+                        let accom_todate = accom[i]['todate']
+                        let accom_fromdate = accom[i]['fromdate']
+                        let accom_recount = accom[i]['recount']
+                        if (accom_recount===0){
+                            let temp_html = `<p class="from-them">${accom_id}<br>
+                        ${accom_name} | ${accom_age} | ${accom_phone}<br>
+                        ${accom_todate} ~ ${accom_fromdate} 일정<br>
+                        ${in_text}<br>
+                        <span onclick="accom_modi('${in_count}','${title_}')">동행수정</span> | <span onclick="accom_del('${in_count}','${title_}')">삭제</span><br>`
+                        
+                        $('#accom0_in').append(temp_html)
+
+                        }else{
+                            let temp_html = `<p class="from-me">${accom_id}<br>
+                            ${accom_name} | ${accom_age} | ${accom_phone}<br>
+                            ${accom_todate} ~ ${accom_fromdate} 일정<br>
+                            ${in_text}<br>
+                            <span2 onclick="accom_modi('${in_count}','${title_}')">동행수정</span2> | <span2 onclick="accom_del('${in_count}','${title_}')">삭제</span2><br>`
+                            
+                            $('#accom0_in').append(temp_html)
+                        }
+                        
+                    }
+                } else {
+                    alert('Loding Error')
+                }
+        }
+    })   
+    $('#accom0_send').removeAttr('onclick')
+    $('#accom0_send').attr('onclick','accom0_in_write()')                            
+}
+
+function accom0_in_write() {
+    let text = $('#accom0_content').val()
+    let text_ = text.replace(/\n+/g, "<br>")
+        $.ajax({
+            type: "POST",
+            url: "/api/accom_in_write",
+            data: {title_give:title_,user_give:user_id,text_give:text_,fromdate_give:fromdate,todate_give:todate,count_give:in_count},	
+            success: function(response){	
+                if (response['result'] == 'success'){
+                    alert(response['msg'])
+                    $('#accom0_send').removeAttr('onclick')
+                    $('#accom0_send').attr('onclick','accom0_write()')
+                    window.location.reload()
+                }else {
+                    alert(response['msg'])
+                }
+            },
+        })
+}
 
 
+
+
+modi_count
+text
+function accom_modi(count,title) {
+    id_ = user_id
+    modi_count = count
+    
+    $.ajax({
+        type: "POST",
+        url: "/api/accom_modi",
+        data: {count_give:count,id_give:id_,title_give:title},		
+        success: function(response){	
+            if (response['result'] == 'success'){
+                modi = response['modi']
+                text = modi['text']
+                $('#accom0_content').val(text)
+                $('#accom0_send').removeAttr('onclick')
+                $('#accom0_send').attr('onclick','accom_modi_write()')
+
+                }else {
+                alert(response['msg'])
+            }
+        },
+    })    
+}
+
+function accom_modi_write(){
+    let text = $('#accom0_content').val()
+        let text_ = text.replace(/\n+/g, "<br>")
+        $.ajax({
+            type: "POST",
+            url: "/api/accom_modi_write",
+            data: {title_give:title_,text_give:text_,count_give:modi_count},		
+            success: function(response){	
+                if (response['result'] == 'success'){
+                    alert(response['msg'])
+                    $('#accom0_send').removeAttr('onclick')
+                    $('#accom0_send').attr('onclick','accom_write()')
+                    window.location.reload()
+                }else {
+                    alert(response['msg'])
+                }
+            },
+        })
+}
+
+
+function accom_del(count,title) {
+    id = user_id
+    $.ajax({
+        type: "POST",
+        url: "/api/accom_del",
+        data: {count_give:count,id_give:id,title_give:title},		
+        success: function(response){	
+            if (response['result'] == 'success'){
+                alert(response['msg'])
+                window.location.reload()
+            }else {
+                alert(response['msg'])
+            }
+        },
+    })
+}

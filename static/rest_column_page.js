@@ -70,6 +70,7 @@ function rest_page() {
             <button class="card_like" onclick="rest_like('${title}')"> 좋아요 <br><span style="color:red;">${like} </span></br></button>
             <button class="card_accom" onclick="accom0_show('${title}')"> 동행 </button>
             <button class="card_review" onclick="review0_show('${title}')"> 리뷰 </button>
+            
         `
                 $('#colum_container').append(temp_html)
             }
