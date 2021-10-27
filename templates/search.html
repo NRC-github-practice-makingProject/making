@@ -315,17 +315,12 @@
 
     <script>
         $(document).ready(function () {
-            showSearches_R()
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
             if (parasearch_input == null) {
                 $('input[name=q]').attr('value', '');
             } else {
                 $('input[name=q]').attr('value', parasearch_input);
             }
+            showSearches_R()
 
             // $("#input_search").keypress()
         });
@@ -403,6 +398,9 @@
             })
 
         }
+
+
+
     </script>
 
     <script>
