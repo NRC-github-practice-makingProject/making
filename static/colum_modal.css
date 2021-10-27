@@ -314,7 +314,7 @@ input[id*="popup2"] + label + div > label {
 }
 .accom_area label {
   position: absolute;
-  left: -25%;
+  left: -40%;
   top: 20px;
   font-size: 18px;
   color: #999;
