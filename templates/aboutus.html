@@ -109,12 +109,18 @@
 
     <div class="wrap">
         <div class="header">
-            <div class="search-container">
-                <input type="text" name="search" placeholder="Search..." class="search-input">
-                <a href="#" class="search-btn">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
+            <form action="/search" " method=" GET">
+                <div class="search-container">
+
+                    <label class="search-field"></label>
+                    <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q"
+                        placeholder="Search..." class="search-input">
+                    <div class="corners"></div>
+                    </label>
+                    <i class="fas fa-search" onclick="showSearches();"></i>
+
+                </div>
+            </form>
             <div class="nav">
                 <ul>
                     <li><a href="/">Home</a></li>
