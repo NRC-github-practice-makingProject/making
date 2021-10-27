@@ -18,6 +18,198 @@
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='index.js')}}"></script>
 
+    <!-- 랜덤 기능 구현 -->
+    <script>
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            arandomSearches()
+            rrandomSearches()
+
+        });
+    </script>
+
+    <!-- 랜덤 기능 구현 -->
+    <script>
+        function rrandomSearches() {
+
+            let rattr_input = rand(0, 1100);
+            let rrest_input = rand(0, 1336);
+
+            console.log(rattr_input);
+            console.log(rrest_input);
+
+            $('#rsearch-box').empty()
+            $.ajax({
+                type: "POST",
+                url: "/api/rrandomDisplay",
+                data: { input_give: rrest_input },
+                success: function (response) {
+                    console.log(response)
+                    let random_searchs = response['rrandomDisplay']
+                for (let i = 0; i < 4; i++) {
+                        rrest_input = rrest_input+i
+
+                        let title = random_searchs[rrest_input]['title']
+                        let img = random_searchs[rrest_input]['img']
+                        let sub_title = random_searchs[rrest_input]['sub_title']
+                        let item_tags1 = random_searchs[rrest_input]['item_tags1']
+                        let item_tags2 = random_searchs[rrest_input]['item_tags2']
+                        let item_tags3 = random_searchs[rrest_input]['item_tags3']
+                        let sub_item_tag = random_searchs[rrest_input]['sub_item_tag']
+                        let sub_item_tag2 = random_searchs[rrest_input]['sub_item_tag2']
+                        let sub_item_tag3 = random_searchs[rrest_input]['sub_item_tag3']
+                        let sub_item_tag4 = random_searchs[rrest_input]['sub_item_tag4']
+                        let sub_item_tag5 = random_searchs[rrest_input]['sub_item_tag5']
+
+                        if (sub_item_tag == null) {
+                            sub_item_tag = '　'
+                            sub_item_tag2 = '　'
+                            sub_item_tag3 = '　'
+                            sub_item_tag4 = '　'
+                            sub_item_tag5 = '　'
+                        } else if (sub_item_tag2 == null) {
+                            sub_item_tag2 = ''
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag3 == null) {
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag4 == null) {
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        }
+                        else if (sub_item_tag5 == null) {
+                            sub_item_tag5 = ''
+                        }
+                        let temp_html = `
+                    <div class=item0>
+                <div class="item0_box">
+                    <img src="${img}" class="item0_img">
+                    <p class="item0_title">
+                        ${title}
+                    </p>
+                    <p class="item0_sub_title">
+                        ${sub_title}
+                    </p>
+                    <p class="item0_tag">
+                        ${item_tags1} ${item_tags2} ${item_tags3} 
+                    </p>
+                    <p class="item0_sub_tag">
+                        ${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}
+                    </p>
+                    <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
+
+                </div>
+            </div>
+            `
+
+                        $('#rsearch-box').append(temp_html)
+                        
+                    }
+                }
+            }
+            )
+        }
+    </script>
+    <script>
+        function arandomSearches() {
+
+            let rattr_input = rand(0, 1100);
+            let rrest_input = rand(0, 1336);
+
+            console.log(rattr_input);
+            console.log(rrest_input);
+
+            $('#asearch-box').empty()
+            $.ajax({
+                type: "POST",
+                url: "/api/arandomDisplay",
+                data: { input_give: rattr_input },
+                success: function (response) {
+                    console.log(response)
+                    let random_searchs = response['arandomDisplay']
+
+                    for (let i = 0; i < 4; i++) {
+                        rattr_input = rattr_input+i
+                        let title = random_searchs[rattr_input]['title']
+                        let img = random_searchs[rattr_input]['img']
+                        let sub_title = random_searchs[rattr_input]['sub_title']
+                        let item_tags1 = random_searchs[rattr_input]['item_tags1']
+                        let item_tags2 = random_searchs[rattr_input]['item_tags2']
+                        let item_tags3 = random_searchs[rattr_input]['item_tags3']
+                        let sub_item_tag = random_searchs[rattr_input]['sub_item_tag']
+                        let sub_item_tag2 = random_searchs[rattr_input]['sub_item_tag2']
+                        let sub_item_tag3 = random_searchs[rattr_input]['sub_item_tag3']
+                        let sub_item_tag4 = random_searchs[rattr_input]['sub_item_tag4']
+                        let sub_item_tag5 = random_searchs[rattr_input]['sub_item_tag5']
+
+                        if (sub_item_tag == null) {
+                            sub_item_tag = '　'
+                            sub_item_tag2 = '　'
+                            sub_item_tag3 = '　'
+                            sub_item_tag4 = '　'
+                            sub_item_tag5 = '　'
+                        } else if (sub_item_tag2 == null) {
+                            sub_item_tag2 = ''
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag3 == null) {
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag4 == null) {
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        }
+                        else if (sub_item_tag5 == null) {
+                            sub_item_tag5 = ''
+                        }
+                        let temp_html = `
+            <div class=item0>
+        <div class="item0_box">
+            <img src="${img}" class="item0_img">
+            <p class="item0_title">
+                ${title}
+            </p>
+            <p class="item0_sub_title">
+                ${sub_title}
+            </p>
+            <p class="item0_tag">
+                ${item_tags1} ${item_tags2} ${item_tags3} 
+            </p>
+            <p class="item0_sub_tag">
+                ${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}
+            </p>
+            <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
+
+        </div>
+    </div>
+    `
+
+                        $('#asearch-box').append(temp_html)
+
+                    }
+                }
+            }
+            )
+        }
+
+
+
+
+    </script>
+    <!-- 랜덤 기능 구현 -->
+
+
+
 </head>
 
 <body>
@@ -37,28 +229,42 @@
     </div>
     <div class="membership">
         <ul>
-            <li><p id="ID0"></p></li>
+            <li>
+                <p id="ID0"></p>
+            </li>
             <li><a id="LOGIN0"></a></li>
-            
+
         </ul>
     </div>
     <div class="wrap">
         <div class="header">
 
-            <form action="/search" " method="GET">
+            <form action="/search" " method=" GET">
                 <div class="search-container">
-                    
+
                     <label class="search-field"></label>
-                        <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q" placeholder="Search..." class="search-input">
-                        <div class="corners"></div>
+                    <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q"
+                        placeholder="Search..." class="search-input">
+                    <div class="corners"></div>
                     </label>
-                        <i class="fas fa-search" onclick="showSearches();"></i>
-                    
+                    <i class="fas fa-search" onclick="showSearches();"></i>
+
                 </div>
             </form>
 
+<<<<<<< HEAD
             <div class="nav">
                 <ul>
+=======
+
+
+            <div class="nav">
+                <ul>
+                    <li>
+                        <p id="ID0"></p>
+                    </li>
+                    <!-- <li><a id="LOGIN0" href="/login">로그인</a></li> -->
+>>>>>>> df71df736c0a085fa6b7451bacff9a454a61e9e0
                     <li><a href="/">Home</a></li>
                     <li><a href="/service">Service</a></li>
                     <li><a href="/aboutus">About Us</a></li>
@@ -123,57 +329,57 @@
         <div class="map_list">
             <ul class="map_list1">
                 <li>
-                    <div><a href="#">서울</a></div>
+                    <div><a href="/sw">서울</a></div>
                 </li>
                 <li>
-                    <div><a href="#">인천</a></div>
+                    <div><a href="/ic">인천</a></div>
                 </li>
                 <li>
-                    <div><a href="#">경기</a></div>
+                    <div><a href="/gg">경기</a></div>
                 </li>
                 <li>
-                    <div><a href="#">강원</a></div>
+                    <div><a href="/gw">강원</a></div>
                 </li>
                 <li>
-                    <div><a href="#">충북</a></div>
+                    <div><a href="/cn">충북</a></div>
                 </li>
                 <li>
-                    <div><a href="#">충남</a></div>
+                    <div><a href="/cs">충남</a></div>
                 </li>
                 <li>
-                    <div><a href="#">세종</a></div>
+                    <div><a href="/sj">세종</a></div>
                 </li>
                 <li>
-                    <div><a href="#">대전</a></div>
+                    <div><a href="/dj">대전</a></div>
                 </li>
                 <li>
-                    <div><a href="#">대구</a></div>
+                    <div><a href="/dg">대구</a></div>
                 </li>
             </ul>
             <ul class="map_list2">
                 <li>
-                    <div><a href="#">경북</a></div>
+                    <div><a href="/gn">경북</a></div>
                 </li>
                 <li>
-                    <div><a href="#">경남</a></div>
+                    <div><a href="/gs">경남</a></div>
                 </li>
                 <li>
-                    <div><a href="#">울산</a></div>
+                    <div><a href="/ws">울산</a></div>
                 </li>
                 <li>
-                    <div><a href="#">부산</a></div>
+                    <div><a href="/bs">부산</a></div>
                 </li>
                 <li>
-                    <div><a href="#">광주</a></div>
+                    <div><a href="/gj">광주</a></div>
                 </li>
                 <li>
-                    <div><a href="#">전북</a></div>
+                    <div><a href="/jn">전북</a></div>
                 </li>
                 <li>
-                    <div><a href="#">전남</a></div>
+                    <div><a href="/js">전남</a></div>
                 </li>
                 <li>
-                    <div><a href="#">제주</a></div>
+                    <div><a href="/jj">제주</a></div>
                 </li>
                 <li>
                     <div><a href="#"></a></div>
@@ -263,10 +469,10 @@
         <div class="destination_header">
             이런곳은 어떠세요?
         </div>
-        <div class="items0">
-            <div class=item0>
+        <div id=asearch-box class="items0">
+            <!-- <div class=item0>
                 <div class="item0_box">
-                    <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
+                    <img src="${img}" class="item0_img">
                     <p class="item0_title">
                         타이틀
                     </p>
@@ -339,7 +545,7 @@
                     <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
 
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -347,83 +553,8 @@
         <div class="restaurant_header">
             전국 맛집 추천
         </div>
-        <div class="items0">
-            <div class=item0>
-                <div class="item0_box">
-                    <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
-                    <p class="item0_title">
-                        타이틀
-                    </p>
-                    <p class="item0_sub_title">
-                        서브_타이틀
-                    </p>
-                    <p class="item0_tag">
-                        #태그 #태그 #태그
-                    </p>
-                    <p class="item0_sub_tag">
-                        #서브태그 #서브태그2
-                    </p>
-                    <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
+        <div id=rsearch-box class="items0">
 
-                </div>
-            </div>
-            <div class=item0>
-                <div class="item0_box">
-                    <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
-                    <p class="item0_title">
-                        타이틀
-                    </p>
-                    <p class="item0_sub_title">
-                        서브_타이틀
-                    </p>
-                    <p class="item0_tag">
-                        #태그 #태그 #태그
-                    </p>
-                    <p class="item0_sub_tag">
-                        #서브태그 #서브태그2
-                    </p>
-                    <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
-
-                </div>
-            </div>
-            <div class=item0>
-                <div class="item0_box">
-                    <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
-                    <p class="item0_title">
-                        타이틀
-                    </p>
-                    <p class="item0_sub_title">
-                        서브_타이틀
-                    </p>
-                    <p class="item0_tag">
-                        #태그 #태그 #태그
-                    </p>
-                    <p class="item0_sub_tag">
-                        #서브태그 #서브태그2
-                    </p>
-                    <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
-
-                </div>
-            </div>
-            <div class=item0>
-                <div class="item0_box">
-                    <img src="{{url_for('static', filename='img/1.jpg')}}" class="item0_img">
-                    <p class="item0_title">
-                        타이틀
-                    </p>
-                    <p class="item0_sub_title">
-                        서브_타이틀
-                    </p>
-                    <p class="item0_tag">
-                        #태그 #태그 #태그
-                    </p>
-                    <p class="item0_sub_tag">
-                        #서브태그 #서브태그2
-                    </p>
-                    <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
-
-                </div>
-            </div>
         </div>
     </div>
     <div class="page_end">

@@ -1,0 +1,139 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+
+    <title> 랜덤 기능테스트</title>
+
+    <!-- 랜덤 기능 구현 -->
+    <script>
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+    <script>
+         $(document).ready(function () {
+            randomSearches()
+            });
+    </script>
+    <script>
+        function randomSearches() {
+
+            let input = rand(0, 1100);
+            let rrest_input = rand(0, 1336);
+
+            console.log(input);
+            console.log(rrest_input);
+
+            $('#search-box').empty()
+            $.ajax({
+                type: "POST",
+                url: "/api/randomDisplay",
+                data: { input_give: rrest_input },
+                success: function (response) {
+                    console.log(response)
+                    let random_searchs = response['restrandomDisplay']
+                    
+                        let title = random_searchs[rrest_input]['title']
+                        let img = random_searchs[rrest_input]['img']
+                        let sub_title = random_searchs[rrest_input]['sub_title']
+                        let item_tags1 = random_searchs[rrest_input]['item_tags1']
+                        let item_tags2 = random_searchs[rrest_input]['item_tags2']
+                        let item_tags3 = random_searchs[rrest_input]['item_tags3']
+                        let sub_item_tag = random_searchs[rrest_input]['sub_item_tag']
+                        let sub_item_tag2 = random_searchs[rrest_input]['sub_item_tag2']
+                        let sub_item_tag3 = random_searchs[rrest_input]['sub_item_tag3']
+                        let sub_item_tag4 = random_searchs[rrest_input]['sub_item_tag4']
+                        let sub_item_tag5 = random_searchs[rrest_input]['sub_item_tag5']
+
+                        if (sub_item_tag == null) {
+                            sub_item_tag = '　'
+                            sub_item_tag2 = '　'
+                            sub_item_tag3 = '　'
+                            sub_item_tag4 = '　'
+                            sub_item_tag5 = '　'
+                        } else if (sub_item_tag2 == null) {
+                            sub_item_tag2 = ''
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag3 == null) {
+                            sub_item_tag3 = ''
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        } else if (sub_item_tag4 == null) {
+                            sub_item_tag4 = ''
+                            sub_item_tag5 = ''
+                        }
+                        else if (sub_item_tag5 == null) {
+                            sub_item_tag5 = ''
+                        }
+
+                        let temp_html = `
+                            <div class="card">
+                        <img class="card-img-top"
+                            src="${img}"
+                            alt="Card image cap">
+                            <p class="card-title">${title}</p>
+                            <p class="card-text">${sub_title}</p>
+                            <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
+                            <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
+                            <button> 좋아요 </button>
+                            <button> 동행 </button>
+                            <button> 리뷰 </button>
+                          </div>
+                         `
+                        $('#search-box').append(temp_html)
+
+                    }
+                }
+            )
+        }
+
+    </script>
+     <!-- 랜덤 기능 구현 -->
+  
+
+
+</head>
+
+
+<body>
+    <div id="search-box" class="card-columns">
+    </div>
+
+</body>
