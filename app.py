@@ -565,12 +565,14 @@ def accom_modi_write():
     modi_text = request.form['modi_text_give']
     count = int(request.form['count_give'])
     recount = int(request.form['recount_give'])
+    print(title, text, modi_text, count, recount)
 
     if not (title and text):
         return jsonify({'result': 'fail', 'msg': '빈칸을 입력해주세요.'})
     else:
         db.accom.update_one({'$and': [{'title': title}, {'count': count}, {'recount': recount}, {'text': text}]}, {
             '$set': {'text': modi_text}})
+
         return jsonify({'result': 'success', 'msg': '수정이 완료되었습니다!'})
 
 

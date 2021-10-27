@@ -99,7 +99,7 @@ function accom0_show_content() {
 }
 
 in_count = 0
-in_recount = 1
+accom_recount = 1
 in_text
 function accom0_in_show_content(count,title_) {
     $('#accom0_in').empty()
@@ -122,7 +122,7 @@ function accom0_in_show_content(count,title_) {
                         let accom_phone = accom[i]['phone']
                         let accom_todate = accom[i]['todate']
                         let accom_fromdate = accom[i]['fromdate']
-                        let accom_recount = accom[i]['recount']
+                        accom_recount = accom[i]['recount']
                         if (accom_recount===0){
                             let temp_html = `<p class="from-them">${accom_id}<br>
                         ${accom_name} | ${accom_age} | ${accom_phone}<br>
@@ -176,13 +176,15 @@ function accom0_in_write() {
 
 modi_count
 text_
+recount_
 function accom_modi(count,title,recount,text) {
     id_ = user_id
     modi_count = count
+    recount_ = recount 
     $.ajax({
         type: "POST",
         url: "/api/accom_modi",
-        data: {count_give:count,id_give:id_,title_give:title,recount_give:recount,text_give:text},		
+        data: {count_give:count,id_give:id_,title_give:title,recount_give:recount_,text_give:text},		
         success: function(response){	
             if (response['result'] == 'success'){
                 modi = response['modi']
@@ -204,7 +206,7 @@ function accom_modi_write(){
         $.ajax({
             type: "POST",
             url: "/api/accom_modi_write",
-            data: {title_give:title_,text_give:text_,modi_text_give:modi_text_,count_give:modi_count,recount_give:recount},		
+            data: {title_give:title_,text_give:text_,modi_text_give:modi_text_,count_give:modi_count,recount_give:recount_},		
             success: function(response){	
                 if (response['result'] == 'success'){
                     alert(response['msg'])
