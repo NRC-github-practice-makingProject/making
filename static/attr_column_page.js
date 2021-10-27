@@ -1,5 +1,8 @@
 $(document).ready(function () {
     attr_page();
+    $('#popup_auth').hide()
+    $('#accom_refer').hide()
+    $('#accom_show').hide()
 });
 
 var count = 0

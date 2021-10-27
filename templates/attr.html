@@ -140,12 +140,12 @@
             <section class="accom_form">
                 <div>
                     <div class="accom_area">
-                        <input class="accom_date"type="text" id="accom_date" autocomplete="off" required>
-                        <label for="accom_date">Date:</label>
+                        <input class="accom_date"type="text" id="accom_todate" autocomplete="off" required>
+                        <label for="accom_todate">ToDate:</label>
                         </div>
                     <div class="accom_area">
-                        <input class="accom_time" type="text" id="accom_time" autocomplete="off" required>
-                        <label for="accom_time">Time:</label>
+                        <input class="accom_date" type="text" id="accom_fromdate" autocomplete="off" required>
+                        <label for="accom_fromdate">FromDate:</label>
                         </div>
                     <div class="btn_area">
                         <button id ="btn_inquiry" onclick="accom0_show_content()">조회</button>
@@ -162,7 +162,7 @@
     <div id="accom_show">
         <label for="popup2"></label>
                     <div class="accom0">
-                        <div class="accom0_show">
+                        <div class="accom0_show" id="accom0_show">
                             <div class="accom0_box" id ="accom0_in">
                                 <p class="from-them"></p>                                
                             </div>
