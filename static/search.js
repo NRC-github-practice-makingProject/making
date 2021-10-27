@@ -84,9 +84,6 @@
         <p class="card-text">${sub_title}</p>
         <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
         <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
-        <button> 좋아요 </button>
-        <button> 동행 </button>
-        <button> 리뷰 </button>
     </div>
     `
                         $('#search-box').append(temp_html)
@@ -156,9 +153,7 @@
             <p class="card-text">${sub_title}</p>
             <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
             <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
-            <button> 좋아요 </button>
-            <button> 동행 </button>
-            <button> 리뷰 </button>
+
         </div>
         `
                         $('#search-box').append(temp_html)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
 
 <head>
     <title>Document</title>
@@ -28,6 +29,91 @@
                 <span></span>
                 <span></span>
             </label>
+=======
+    <head>
+        <title>Document</title>   
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <link rel="stylesheet" href="../static/colum_modal.css">
+        <link rel="stylesheet" href="../static/classic.css">
+        <link rel="stylesheet" href="../static/classic.date.css">
+</head>
+
+    <body>
+        <input type="checkbox" id="menuicon">
+            <header>
+                <div>
+                    <span class="area_desc"><a href="/"><img src="../static/img/spartrip.png"></a></span>
+                    <label for="menuicon" class="menubtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </header>
+            <div class="sidebar">
+                <span class="area_desc">
+                    <p class="companion-title">동행 찾기</p>
+                    <p class="companion-location">지역 선택</p>
+                    <div id="popup_accom">
+                        <div id="accom_refer">
+                                <section class="accom_form">
+                                    <div>
+                                        <div class="accom_area">
+                                            <input class="accom_date" type="text" id="accom_fromdate" autocomplete="off" required>
+                                            <label for="accom_fromdate">출발일자:</label>
+                                            </div>
+                                        <div class="accom_area">
+                                            <input class="accom_date"type="text" id="accom_todate" autocomplete="off" required>
+                                            <label for="accom_todate">도착일자:</label>
+                                            </div>
+                                        <div class="btn_area">
+                                            <button id ="btn_inquiry" onclick="accom0_show_content()">조회</button>
+                                            </div>
+                                    </div>
+                        </div>
+                    </div>
+                    <btn onclick="test()">test</btn>
+                    <form>
+                        <select id="location" name="location">
+                          <option value="">-- 선택하세요 --</option>
+                            <option value="1">서울특별시</option>
+                            <option value="2">인천광역시</option>
+                            <option value="3">경기도</option>
+                            <option value="4">강원도</option>
+                            <option value="5">충청북도</option>
+                            <option value="6">충청남도</option>
+                            <option value="7">세종시</option>
+                            <option value="8">대전광역시</option>
+                            <option value="9">대구광역시</option>
+                            <option value="10">경상북도</option>
+                            <option value="11">경상남도</option>
+                            <option value="12">울산광역시</option>
+                            <option value="13">부산광역시</option>
+                            <option value="14">광주광역시</option>
+                            <option value="15">전라북도</option>
+                            <option value="16">전라남도</option>
+                            <option value="17">제주시</option>
+                        </select>
+                      </form>
+                </span>
+            </div>
+            
+        <div class="membership">
+            <ul>
+                <li><p id="ID0"></p></li>
+                <li><a id="LOGIN0"href="/login"></a></li>
+            </ul>
+>>>>>>> upstream/main
         </div>
     </header>
     <div class="sidebar">
@@ -59,22 +145,34 @@
         </span>
     </div>
 
-    <div class="membership">
-        <ul>
-            <li>
-                <p id="ID0"></p>
-            </li>
-            <li><a id="LOGIN0" href="/login"></a></li>
-        </ul>
-    </div>
+        <div class="wrap">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" name="search" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()" name="q">
+                    <a class="search-btn" onclick="index_search()">
+                            <i class="fas fa-search" onclick="index_search()"></i>      
+                    </a>
+                </div>
 
-    <div class="wrap">
-        <div class="header">
-
-                <div class="search-container"> <input type="text" name="search" placeholder="Search..."
-                        class="search-input" id="input_search" onkeyup="enterkey()" name="q"> <a class="search-btn"
-                        onclick="index_search()"> <i class="fas fa-search" onclick="index_search()"></i> </a> </div>
-            
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <p id="ID0"></p>
+                        </li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/service">Service</a></li>
+                        <li><a href="/aboutus">About Us</a></li>
+                        <li><a href="/FAQ">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <input type="radio" name="slide" id="slide05">
 
             <div class="nav">
                 <ul>
@@ -313,6 +411,8 @@
         <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../static/index.js"></script>
         <script src="../static/search.js"></script>
-</body>
-
+        <script src="../static/picker.js"></script>
+        <script src="../static/picker.date.js"></script> 
+        <script src="../static/accom.js"></script>
+    </body>
 </html>

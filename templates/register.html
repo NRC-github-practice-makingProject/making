@@ -13,6 +13,7 @@
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../static/login.css">
+    <script src="../static/index.js"></script>
 </head>
 
 <body>
@@ -56,14 +57,22 @@
             </span>
         </div>
 
+        <div class="membership">
+            <ul>
+                <li><p id="ID0"></p></li>
+                <li><a id="LOGIN0"href="/login"></a></li>
+            </ul>
+        </div>
+
     <div class="wrap">
         <div class="header">
             <div class="search-container">
-                <input type="text" name="search" placeholder="Search..." class="search-input">
-                <a href="#" class="search-btn">
-                        <i class="fas fa-search"></i>      
+                <input type="text" name="search" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()" name="q">
+                <a class="search-btn" onclick="index_search()">
+                        <i class="fas fa-search" onclick="index_search()"></i>      
                 </a>
             </div>
+
             <div class="nav">
                 <ul>
                     <li><a href="/">Home</a></li>
