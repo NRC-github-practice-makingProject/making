@@ -14,6 +14,58 @@ client = MongoClient('mongodb://4team:team4pass@3.36.13.234', 27017)
 # client = MongoClient('localhost', 27017)
 db = client.dbGilbert
 
+# 지역이름 매칭 작업
+@app.route('/sw')
+def sw():
+    return render_template('/region/sw.html')
+@app.route('/ic')
+def ic():
+    return render_template('/region/ic.html')
+@app.route('/gg')
+def gg():
+    return render_template('/region/gg.html')
+@app.route('/gw')
+def gw():
+    return render_template('/region/gw.html')
+@app.route('/cn')
+def cn():
+    return render_template('/region/cn.html')
+@app.route('/cs')
+def cs():
+    return render_template('/region/cs.html')
+@app.route('/sj')
+def sj():
+    return render_template('/region/sj.html')
+@app.route('/dj')
+def dj():
+    return render_template('/region/dj.html')
+@app.route('/dg')
+def dg():
+    return render_template('/region/dg.html')
+@app.route('/gn')
+def gn():
+    return render_template('/region/gn.html')
+@app.route('/gs')
+def gs():
+    return render_template('/region/gs.html')
+@app.route('/ws')
+def ws():
+    return render_template('/region/ws.html')
+@app.route('/bs')
+def bs():
+    return render_template('/region/bs.html')
+@app.route('/gj')
+def gj():
+    return render_template('/region/gj.html')
+@app.route('/jn')
+def jn():
+    return render_template('/region/jn.html')
+@app.route('/js')
+def js():
+    return render_template('/region/js.html')
+@app.route('/jj')
+def jj():
+    return render_template('/region/jj.html')
 # search.html사용 셋팅
  
 #  랜덤기능 구현
