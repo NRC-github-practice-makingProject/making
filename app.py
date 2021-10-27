@@ -332,7 +332,7 @@ def accom_write():
     text = request.form['text_give']
     fromdate = request.form['fromdate_give']
     todate = request.form['todate_give']
-    dates = date_rage(todate, fromdate)
+    dates = date_rage(fromdate, todate)
     count_get = list(db.accom.find({'$and': [{'title': title}, {'count': {'$gte': 0}}]}, {
         '_id': False}).sort('count', -1))
     if count_get == []:
@@ -411,7 +411,7 @@ def accom_show():
     accom_title = request.form['title_give']
     accom_fromdate = request.form['fromdate_give']
     accom_todate = request.form['todate_give']
-    dates = date_rage(accom_todate, accom_fromdate)
+    dates = date_rage(accom_fromdate, accom_todate)
     content = []
 
     for n in dates:

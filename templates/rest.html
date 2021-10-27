@@ -85,9 +85,9 @@
         <div class="wrap">
             <div class="header">
                 <div class="search-container">
-                    <input type="text" name="search" placeholder="Search..." class="search-input">
-                    <a href="#" class="search-btn">
-                            <i class="fas fa-search"></i>      
+                    <input type="text" name="search" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()" name="q">
+                    <a class="search-btn" onclick="index_search()">
+                            <i class="fas fa-search" onclick="index_search()"></i>      
                     </a>
                 </div>
                 <div class="nav">
