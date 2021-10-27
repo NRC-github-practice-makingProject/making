@@ -2,24 +2,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
 
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 
 
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +25,9 @@
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <script src="https: //ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='index.js')}}"></script>
+    <link rel="stylesheet" href="../static/column_page.css">
 
-    <title> 검색_기능_테스트</title>
+    <title> 검색</title>
 
     <style>
         .search-container {
@@ -158,7 +149,7 @@
         }
 
         body {
-            background-color: var(--dark-color);
+            background: #fff;
             font-family: Helvetica, sans-serif;
         }
 
@@ -290,212 +281,59 @@
             transform: translateX(-50%) rotate(-35deg);
             border-radius: 50%;
         }
+        .flex-container{
+            display: flex;
+            width: 60%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 4% auto;
+        }
     </style>
-
-    <script>
-        function getParameter(strParamName) {
-            var arrResult = null;
-            if (strParamName) {
-                arrResult = location.search.match(new RegExp("[&?]" + strParamName + "=(.*?)(&|$)"));
-                return arrResult && arrResult[1] ? arrResult[1] : null;
-            }
-        }
-
-        var p_name = getParameter("q");
-        // alert('input : ' +  p_name );
-        var parasearch_input = decodeURIComponent(p_name);
-
-        $('input[name=q]').attr('value', 1);
-        $('input[name=q]').attr('value', parasearch_input);
-        // var p_age = getParameter("age");
-        // alert('Name : ' + p_name + ' / Age :' + p_age); 
-        // alert('input : ' + parasearch_input);
-    </script>
-
-
-    <script>
-        $(document).ready(function () {
-            if (parasearch_input == null) {
-                $('input[name=q]').attr('value', '');
-            } else {
-                $('input[name=q]').attr('value', parasearch_input);
-            }
-            showSearches_R()
-
-            // $("#input_search").keypress()
-        });
-
-    </script>
-
-    <script>
-        function showSearches_R() {
-
-            let input = parasearch_input
-            $('#search-box').empty()
-            $.ajax({
-                type: "POST",
-                url: "/api/search",
-                data: { input_give: input },
-                success: function (response) {
-                    console.log(response)
-                    let jeju_searchs = response['jeju_search']
-
-                    for (let i = 0; i < jeju_searchs.length; i++) {
-                        let title = jeju_searchs[i]['title']
-                        let img = jeju_searchs[i]['img']
-                        let sub_title = jeju_searchs[i]['sub_title']
-                        let item_tags1 = jeju_searchs[i]['item_tags1']
-                        let item_tags2 = jeju_searchs[i]['item_tags2']
-                        let item_tags3 = jeju_searchs[i]['item_tags3']
-                        let sub_item_tag = jeju_searchs[i]['sub_item_tag']
-                        let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
-                        let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
-                        let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
-                        let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
-
-                        if (sub_item_tag == null) {
-                            sub_item_tag = '　'
-                            sub_item_tag2 = '　'
-                            sub_item_tag3 = '　'
-                            sub_item_tag4 = '　'
-                            sub_item_tag5 = '　'
-                        } else if (sub_item_tag2 == null) {
-                            sub_item_tag2 = ''
-                            sub_item_tag3 = ''
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        } else if (sub_item_tag3 == null) {
-                            sub_item_tag3 = ''
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        } else if (sub_item_tag4 == null) {
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        }
-                        else if (sub_item_tag5 == null) {
-                            sub_item_tag5 = ''
-                        }
-
-                        let temp_html = `
-            <div class="card">
-        <img class="card-img-top"
-             src="${img}"
-             alt="Card image cap">
-        <p class="card-title">${title}</p>
-        <p class="card-text">${sub_title}</p>
-        <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
-        <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
-        <button> 좋아요 </button>
-        <button> 동행 </button>
-        <button> 리뷰 </button>
-    </div>
-    `
-                        $('#search-box').append(temp_html)
-
-                    }
-                }
-
-            })
-
-        }
-
-
-
-    </script>
-
-    <script>
-        function showSearches() {
-
-            let input = $('#input_search').val()
-            $('#search-box').empty()
-            $.ajax({
-                type: "POST",
-                url: "/api/search",
-                data: { input_give: input },
-                success: function (response) {
-                    console.log(response)
-                    let jeju_searchs = response['jeju_search']
-
-                    for (let i = 0; i < jeju_searchs.length; i++) {
-                        let title = jeju_searchs[i]['title']
-                        let img = jeju_searchs[i]['img']
-                        let sub_title = jeju_searchs[i]['sub_title']
-                        let item_tags1 = jeju_searchs[i]['item_tags1']
-                        let item_tags2 = jeju_searchs[i]['item_tags2']
-                        let item_tags3 = jeju_searchs[i]['item_tags3']
-                        let sub_item_tag = jeju_searchs[i]['sub_item_tag']
-                        let sub_item_tag2 = jeju_searchs[i]['sub_item_tag2']
-                        let sub_item_tag3 = jeju_searchs[i]['sub_item_tag3']
-                        let sub_item_tag4 = jeju_searchs[i]['sub_item_tag4']
-                        let sub_item_tag5 = jeju_searchs[i]['sub_item_tag5']
-
-                        if (sub_item_tag == null) {
-                            sub_item_tag = '　'
-                            sub_item_tag2 = '　'
-                            sub_item_tag3 = '　'
-                            sub_item_tag4 = '　'
-                            sub_item_tag5 = '　'
-                        } else if (sub_item_tag2 == null) {
-                            sub_item_tag2 = ''
-                            sub_item_tag3 = ''
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        } else if (sub_item_tag3 == null) {
-                            sub_item_tag3 = ''
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        } else if (sub_item_tag4 == null) {
-                            sub_item_tag4 = ''
-                            sub_item_tag5 = ''
-                        }
-                        else if (sub_item_tag5 == null) {
-                            sub_item_tag5 = ''
-                        }
-
-                        let temp_html = `
-                <div class="card">
-            <img class="card-img-top"
-                 src="${img}"
-                 alt="Card image cap">
-            <p class="card-title">${title}</p>
-            <p class="card-text">${sub_title}</p>
-            <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
-            <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
-            <button> 좋아요 </button>
-            <button> 동행 </button>
-            <button> 리뷰 </button>
-        </div>
-        `
-                        $('#search-box').append(temp_html)
-
-                    }
-                }
-
-
-
-
-            })
-
-        }
-    </script>
 
 </head>
 
 <body>
     <input type="checkbox" id="menuicon">
-    <header>
-        <div>
-            <span class="area_desc">Spartrip Logo</span>
-            <label for="menuicon" class="menubtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        </div>
-    </header>
-    <div class="sidebar">
-        <span class="area_desc">SIDEBAR</span>
-    </div>
+            <header>
+                <div>
+                    <span class="area_desc"><a href="/"><img src="../static/img/spartrip.png"></a></span>
+                    <label for="menuicon" class="menubtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </header>
+            <div class="sidebar">
+                <span class="area_desc">
+                    <p class="companion-title">동행 찾기</p>
+                    <p class="companion-location">지역 선택</p>
+                    <form>
+                        <select id="location" name="location">
+                          <option value="">-- 선택하세요 --</option>
+                            <option value="1">서울특별시</option>
+                            <option value="2">인천광역시</option>
+                            <option value="3">경기도</option>
+                            <option value="4">강원도</option>
+                            <option value="5">충청북도</option>
+                            <option value="6">충청남도</option>
+                            <option value="7">세종시</option>
+                            <option value="8">대전광역시</option>
+                            <option value="9">대구광역시</option>
+                            <option value="10">경상북도</option>
+                            <option value="11">경상남도</option>
+                            <option value="12">울산광역시</option>
+                            <option value="13">부산광역시</option>
+                            <option value="14">광주광역시</option>
+                            <option value="15">전라북도</option>
+                            <option value="16">전라남도</option>
+                            <option value="17">제주시</option>
+                        </select>
+                      </form>
+                </span>
+            </div>
     <div class="membership">
         <ul>
             <li><p id="ID0"></p></li>
@@ -505,19 +343,13 @@
     </div>
     <div class="wrap">
         <div class="header">
+            <div class="search-container">
+                <input type="text" name="search" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()" name="q">
+                <a class="search-btn" onclick="index_search()">
+                    <i class="fas fa-search" onclick="index_search()"></i>      
+                </a>
+            </div>
 
-            <!-- <form action="/search" " method=" GET">
-                <div class="search-container">
-
-                    <label class="search-field"></label>
-                        <input id="input_search" type="text" onkeyup="if(window.event.keyCode==13){showSearches()}" name="q"
-                        placeholder="Search..." class="search-input">
-                    <div class="corners"></div>
-                    </label>
-                    <i class="fas fa-search" onclick="showSearches();"></i>
-
-                </div>
-            </form> -->
 
             <!-- <div class="search-container">
                 <input id="input_search" type="text" name="search" placeholder="Search..." class="search-input">
@@ -543,9 +375,7 @@
             
             <div class="nav">
                 <ul>
-                    <li>
-                        <p id="ID0"></p>
-                    </li>
+
                     <!-- <li><a id="LOGIN0" href="/login"></a></li> -->
                     <li><a href="/">Home</a></li>
                     <li><a href="/service">Service</a></li>
@@ -627,8 +457,9 @@
     <br>
     <br>
     <br>
-    <div id="search-box" class="card-columns">
+    <div id="search-box" class="flex-container">
     </div>
 
+<script src="../static/search.js"></script>
 
 </body>

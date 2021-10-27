@@ -84,7 +84,7 @@ function accom0_show_content() {
                         
                         let temp_html = `<p class="from-them">${accom_id}<br>
                         ${accom_name} | ${accom_age} | ${accom_phone}<br>
-                        ${accom_todate} ~ ${accom_fromdate} 일정<br>
+                        ${accom_fromdate} ~ ${accom_todate} 일정<br>
                         ${accom_text}<br>
                         <span onclick="accom_modi('${accom_count}','${title_}','${recount}','${accom_text}')">동행수정</span> | <span onclick="accom_del('${accom_count}','${title_}','${recount}','${accom_text}')">삭제</span><br>
                         <span onclick="accom0_in_show_content('${accom_count}','${title_}')">📌참가 신청하기</span></p>`                                                         
@@ -126,7 +126,7 @@ function accom0_in_show_content(count,title_) {
                         if (accom_recount===0){
                             let temp_html = `<p class="from-them">${accom_id}<br>
                         ${accom_name} | ${accom_age} | ${accom_phone}<br>
-                        ${accom_todate} ~ ${accom_fromdate} 일정<br>
+                        ${accom_fromdate} ~ ${accom_todate} 일정<br>
                         ${accom_text}<br>
                         <span onclick="accom_modi('${in_count}','${title_}','${accom_recount}','${accom_text}')">동행수정</span> | <span onclick="accom_in_del('${in_count}','${title_}','${accom_recount}','${accom_text}')">삭제</span><br>`
                         

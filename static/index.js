@@ -35,15 +35,23 @@ function Logincheck() {
 }
 
 function test(){
-    $.ajax({
-        type: "GET",		  
-        url: "/search",
-        data: {},		
-        success: function(response){		
-          showSearches()
-        }
-      })
+    let location = $('#location').val()
+    alert(location)
 }
+
+function index_search(){
+    let input_main = $('#input_search').val()
+    window.location.href='/search?q='+input_main
+}
+
+function enterkey() {
+    if (window.event.keyCode == 13) {
+
+    let input_main = $('#input_search').val()
+    window.location.href='/search?q='+input_main
+    }
+}
+
 
 
 function rand(min, max) {
