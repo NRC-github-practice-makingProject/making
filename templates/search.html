@@ -7,16 +7,17 @@
 
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
+  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+   
+    
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,264 +28,11 @@
     <script src="{{ url_for('static', filename='index.js')}}"></script>
     <link rel="stylesheet" href="../static/column_page.css">
 
-<<<<<<< HEAD
-    <title> 검색 </title>
-=======
     <title> 검색</title>
->>>>>>> upstream/main
 
     <style>
-        .search-container {
-            background: white;
-            width: 300px;
-            height: 30px;
-            border-radius: 30px;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: 0.8s;
-            box-shadow: 1px 2px rgba(116, 125, 136, 0.2);
-            align-items: center;
-        }
-
-        .search-container:hover>.search-input {
-            width: 300px;
-        }
-
-        .search-container .search-input {
-            background: transparent;
-            border: none;
-            outline: none;
-            width: 0px;
-            font-weight: 500;
-            font-size: 16px;
-            transition: 0.8s;
-        }
-
-        .search-container .search-btn .fas {
-            color: white;
-        }
-
-        @keyframes hoverShake {
-            0% {
-                transform: skew(0deg, 0deg);
-            }
-
-            25% {
-                transform: skew(5deg, 5deg);
-            }
-
-            75% {
-                transform: skew(-5deg, -5deg);
-            }
-
-            100% {
-                transform: skew(0deg, 0deg);
-            }
-        }
-
-        .search-container:hover {
-            animation: hoverShake 0.15s linear 3;
-        }
-
-        /* google 클론 */
-
-        h1 {
-            text-align: center;
-            margin-top: 230px;
-            font-size: 90px;
-        }
-
-        h1 span:nth-child(1) {
-            color: #4285f4;
-        }
-
-        h1 span:nth-child(2) {
-            color: #ea4335;
-        }
-
-        h1 span:nth-child(3) {
-            color: #fbbc05;
-        }
-
-        h1 span:nth-child(4) {
-            color: #4285f4;
-        }
-
-        h1 span:nth-child(5) {
-            color: #34a853;
-        }
-
-        h1 span:nth-child(6) {
-            color: #ea4335;
-        }
-
-        .search-bar {
-            width: 500px;
-        }
-
-        :root {
-            --dark-color: #232323;
-            --light-color: #F4F4F4;
-
-            /*  
-    Feel free to change the variable '--circle-size' in order to scale circle and search-bar with absolute and relative units ^-^  
-*/
-            --circle-size: 200px;
-            --circle-color: var(--light-color);
-
-            --input-height: calc(var(--circle-size) * .6);
-            --input-placeholder-color: hsl(0, 0%, 74%);
-            /*
-    Change --input-width scalability if You think that the width of search-bar is too large/small :D
-*/
-            --input-width: calc(var(--circle-size) * 2);
-            --input-color: hsl(226, 45%, 43%);
-
-            --cross-size: calc(var(--circle-size) * .3);
-            --cross-color: hsl(0, 0%, 27%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: #fff;
-            font-family: Helvetica, sans-serif;
-        }
-
-        .align-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .search-container1>input[type='checkbox'] {
-            display: none;
-        }
-
-        .search-container1 input[type="checkbox"]:checked~label[for="search-trigger"] div {
-            margin-left: calc(var(--input-width) * .5);
-        }
-
-        .search-container1 input[type="checkbox"]:checked~.search-field input[type="text"] {
-            width: var(--input-width);
-        }
-
-        .search-container1 input[type="checkbox"]:checked~.search-field {
-            margin-right: calc(var(--input-width) * -.5);
-        }
-
-        .search-container1 input[type="checkbox"]:checked~label .search-toggle::before {
-            top: 48%;
-            left: 50%;
-            height: calc(var(--cross-size) / 5);
-            width: calc(var(--cross-size) * 2);
-            transform: translateX(-50%) rotate(-47deg);
-            border-radius: calc(var(--cross-size) * .1);
-        }
-
-        .search-container1 input[type="checkbox"]:checked~label .search-toggle::after {
-            top: 21%;
-            left: 50%;
-            height: calc(var(--cross-size) * 2);
-            transform: translateX(-50%) rotate(-43deg);
-        }
-
-        .search-container1>label[for='search-trigger']>div {
-            position: absolute;
-            top: 50%;
-            margin-left: calc(var(--input-height) * -.5);
-            transform: translateY(-50%);
-            width: var(--circle-size);
-            height: var(--circle-size);
-            background-color: var(--circle-color);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: margin 650ms ease;
-        }
-
-        .search-container1>label[for='search-trigger']>div::before,
-        .search-container1>label[for='search-trigger']>div::after {
-            content: '';
-            position: absolute;
-        }
-
-        .search-container1 .search-field {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: -1;
-            transition: margin 500ms ease;
-        }
-
-        .search-container1 input[type="text"] {
-            height: var(--input-height);
-            width: 0;
-            background-color: var(--input-color);
-            font-size: calc(var(--circle-size) * .17);
-            color: var(--light-color);
-            outline: none;
-            border: 0 none;
-            transition: width 500ms ease;
-        }
-
-        .search-container1 input[type="text"]::placeholder {
-            color: var(--input-placeholder-color);
-        }
-
-        .search-container1 .search-field::before,
-        .search-container1 .search-field::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            height: var(--input-height);
-            width: var(--input-height);
-            background-color: var(--input-color);
-            border-radius: 50%;
-            z-index: -2;
-            cursor: text;
-        }
-
-        .search-container1 .search-field::before {
-            left: calc(var(--input-height) * -.5);
-        }
-
-        .search-container1 .search-field::after {
-            right: calc(var(--input-height) * -.5);
-        }
-
-        .search-container1 label .search-toggle::before,
-        .search-container1 label .search-toggle::after {
-            content: '';
-            position: absolute;
-            height: var(--cross-size);
-            width: calc(var(--cross-size) / 5);
-            background-color: var(--cross-color);
-            z-index: 1;
-            transition: all 500ms ease;
-        }
-
-        .search-container1 label .search-toggle::after {
-            top: 50%;
-            left: 62.5%;
-            transform: translateX(-50%) rotate(-35deg);
-            border-radius: calc(var(--cross-size) * .1);
-        }
-
-        .search-container1 label .search-toggle::before {
-            width: var(--cross-size);
-            top: calc(50% - calc(var(--cross-size) * .9));
-            left: calc(62.5% - calc(var(--cross-size) * .7));
-            transform: translateX(-50%) rotate(-35deg);
-            border-radius: 50%;
-        }
+     
+        */
         .flex-container{
             display: flex;
             width: 60%;
@@ -292,7 +40,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            margin: 4% auto;
+            margin: 0% auto;
         }
     </style>
 
@@ -349,35 +97,14 @@
     </div>
     <div class="wrap">
         <div class="header">
+
             <div class="search-container">
-                <input type="text" name="search" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()" name="q">
+                <input type="text" name="q" placeholder="Search..." class="search-input" id="input_search" onkeyup="enterkey()">
                 <a class="search-btn" onclick="index_search()">
                     <i class="fas fa-search" onclick="index_search()"></i>      
                 </a>
             </div>
 
-
-            <!-- <div class="search-container">
-                <input id="input_search" type="text" name="search" placeholder="Search..." class="search-input">
-                <a href="/search" class="search-btn">
-                    <i class="fas fa-search" onclick="showSearches(); Open()"></i>
-                </a>
-            </div> -->
-
-            <!-- // 수정한 부분 시작 -->
-            <!-- <div id="post-box" class="form-post" style="display:none">
-                <table id="search-table" class="table table-striped">
-                    <thead>
-                        
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-
-                <button type="button" class="btn btn-primary" onclick="Close()">닫기</button>
-
-            </div> -->
-
-            <!-- // 수정한 부분 끝 -->
 
             <div class="nav">
                 <ul>
@@ -445,9 +172,9 @@
     <!-- <h1>
             <span>n</span><span>o</span><span>m</span><span>a</span><span>d</span><span>K</span>
         </h1> -->
-    <div>
+    <!-- <div>
         <a>
-            <!-- <form action="/search" method="GET"> -->
+           
             <div class="search-container1 align-center">
                 <input type="checkbox" id="search-trigger">
                 <label for="search-trigger">
@@ -460,12 +187,10 @@
                 </label>
             </div>
         </a>
-    </div>
+    </div> -->
     <br>
     <br>
-    <br>
-    <br>
-    <br>
+    
     <div id="search-box" class="flex-container">
     </div>
 
