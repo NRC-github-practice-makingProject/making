@@ -68,7 +68,7 @@
   box-shadow: 1px 2px rgba(116, 125, 136, 0.2);
 }
 
-.search-container:hover .search-input {
+.search-container:hover > .search-input {
   width: 300px;
 }
 
@@ -140,6 +140,7 @@ header > div {
   transform: translateY(-50%);
   cursor: pointer;
 }
+
 .menubtn span {
   display: block;
   position: absolute;
@@ -149,16 +150,19 @@ header > div {
   background: #222;
   transition: all 0.35s;
 }
+
 .menubtn span:nth-child(1) {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .menubtn span:nth-child(2) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .menubtn span:nth-child(3) {
   bottom: 20%;
   left: 50%;
@@ -177,9 +181,26 @@ header > div {
   transition: 0.35s;
 }
 
+.sidebar-close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.35s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+input[id="menuicon"]:checked ~ .sidebar-close {
+  opacity: 1;
+  visibility: visible;
+}
+
 .companion-title {
   position: relative;
-  top: -360px;
+  top: -200px;
   left: -40px;
   font-size: xx-large;
   color: white;
@@ -187,9 +208,17 @@ header > div {
 
 .companion-location {
   position: relative;
-  top: -300px;
+  top: -100px;
   left: -40px;
   color: white;
+}
+
+form {
+  position: relative;
+  display: flex;
+  top: -80px;
+  left: -40px;
+  height: 4.5vh;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
@@ -229,14 +258,6 @@ select:focus {
 
 select:disabled {
   opacity: 0.5;
-}
-
-form {
-  position: relative;
-  display: flex;
-  top: -280px;
-  left: -40px;
-  height: 4.5vh;
 }
 
 /* 

@@ -45,13 +45,14 @@
                     </label>
                 </div>
             </header>
+
             <div class="sidebar">
                 <span class="area_desc">
                     <p class="companion-title">동행 찾기</p>
                     <p class="companion-location">지역 선택</p>
                     <form>
-                        <select id="location" name="location">
-                          <option value="">-- 선택하세요 --</option>
+                        <select id="location_" name="location">
+                        <option value="">-- 선택하세요 --</option>
                             <option value="1">서울특별시</option>
                             <option value="2">인천광역시</option>
                             <option value="3">경기도</option>
@@ -70,9 +71,29 @@
                             <option value="16">전라남도</option>
                             <option value="17">제주시</option>
                         </select>
-                      </form>
+                    </form>
+                    
+                    <div id="popup_accom">
+                        <div id="accom_refer">
+                            <section class="accom_form">
+                                <div>
+                                    <div class="accom_area">
+                                        <input class="accom_date" type="text" id="accom_fromdate" autocomplete="off" required>
+                                        <label for="accom_fromdate">출발일자:</label>
+                                    </div>
+                                    <div class="accom_area">
+                                        <input class="accom_date"type="text" id="accom_todate" autocomplete="off" required>
+                                        <label for="accom_todate">도착일자:</label>
+                                    </div>
+                                    <div class="btn_area">
+                                        <button id ="btn_inquiry" onclick="accom0_show()">조회</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                 </span>
             </div>
+            <label for="menuicon" class="sidebar-close"></label>
             
         <div class="membership">
             <ul>
@@ -157,29 +178,6 @@
 </div>
 </div>
 
-<input type="checkbox" id="popup1">
-<label for="popup1"></label>
-<div id="popup_accom">
-    <div id="accom_refer">
-        <label for="popup1"></label>
-            <section class="accom_form">
-                <div>
-                    <div class="accom_area">
-                        <input class="accom_date"type="text" id="accom_todate" autocomplete="off" required>
-                        <label for="accom_todate">ToDate:</label>
-                        </div>
-                    <div class="accom_area">
-                        <input class="accom_date" type="text" id="accom_fromdate" autocomplete="off" required>
-                        <label for="accom_fromdate">FromDate:</label>
-                        </div>
-                    <div class="btn_area">
-                        <button id ="btn_inquiry" onclick="accom0_show_content()">조회</button>
-                        </div>
-                </div>
-            </section>
-    </div>
-    <label for="popup1" id="accom0_label1"></label>
-</div>
 
 <input type="checkbox" id="popup2">
 <label for="popup2"></label>
@@ -187,10 +185,9 @@
     <div id="accom_show">
         <label for="popup2"></label>
                     <div class="accom0">
-                        <a id="back" onclick="back()" style="font-size: 35px;">🔙</a>
-                        <div class="accom0_show" id="accom0_show">
+                        <div class="accom0_show">
+                            <a id="back" onclick="back()" style="font-size: 35px;">🔙</a>
                             <div class="accom0_box" id ="accom0_in">
-                                <p class="from-them"></p>                                
                             </div>
                         </div>
                         <div class="accom0_write">
@@ -203,6 +200,7 @@
     </div>
     <label for="popup2" id="accom0_label2"></label>
 </div>
+
 
 
 <input type="checkbox" id="popup0">
