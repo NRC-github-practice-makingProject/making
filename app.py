@@ -269,8 +269,6 @@ def attr_like():
     title = request.form['title_give']
     target = db.attr.find_one({'title': title}, {'_id': False})
     like = target['like']
-    print(like)
-    print(type(like))
     new_like = like + 1
     db.attr.update_one({'title': title}, {'$set': {'like': new_like}})
     return jsonify({'msg': '좋아요👍'})
@@ -281,8 +279,6 @@ def rest_like():
     title = request.form['title_give']
     target = db.rest.find_one({'title': title}, {'_id': False})
     like = target['like']
-    print(like)
-    print(type(like))
     new_like = like + 1
     db.rest.update_one({'title': title}, {'$set': {'like': new_like}})
     return jsonify({'msg': '좋아요👍'})
@@ -327,13 +323,13 @@ def review_show():
 
 @app.route('/api/accom_write', methods=['POST'])
 def accom_write():
-    title = request.form['title_give']
+    location = request.form['location_give']
     user_id = request.form['user_give']
     text = request.form['text_give']
     fromdate = request.form['fromdate_give']
     todate = request.form['todate_give']
     dates = date_rage(fromdate, todate)
-    count_get = list(db.accom.find({'$and': [{'title': title}, {'count': {'$gte': 0}}]}, {
+    count_get = list(db.accom.find({'$and': [{'location': location}, {'count': {'$gte': 0}}]}, {
         '_id': False}).sort('count', -1))
     if count_get == []:
         count = 0
@@ -341,11 +337,11 @@ def accom_write():
         count = count_get[0]['count']
         count += 1
     recount = 0
-    if not (title and text):
+    if not (location and text):
         return jsonify({'result': 'fail', 'msg': '빈칸을 입력해주세요.'})
     else:
         doc = {
-            'title': title,
+            'location': location,
             'user_id': user_id,
             'text': text,
             'todate': todate,
@@ -408,14 +404,14 @@ def review_modi_write():
 
 @app.route('/api/accom_show', methods=['POST'])
 def accom_show():
-    accom_title = request.form['title_give']
+    accom_location = request.form['location_give']
     accom_fromdate = request.form['fromdate_give']
     accom_todate = request.form['todate_give']
     dates = date_rage(accom_fromdate, accom_todate)
     content = []
 
     for n in dates:
-        accoms = list(db.accom.find({'$and': [{'title': accom_title}, {
+        accoms = list(db.accom.find({'$and': [{'location': accom_location}, {
             'setdate': {'$regex': n}}]}, {'_id': False}))
         if accoms is None:
             pass
@@ -442,11 +438,11 @@ def accom_show():
 
 @app.route('/api/accom_in_show', methods=['POST'])
 def accom_in_show():
-    accom_title = request.form['title_give']
+    accom_location = request.form['location_give']
     accom_count = int(request.form['count_give'])
     content = []
     accoms = list(db.accom.find(
-        {'$and': [{'title': accom_title}, {'count': accom_count}]}, {'_id': False}))
+        {'$and': [{'location': accom_location}, {'count': accom_count}]}, {'_id': False}))
     if accoms is None:
         pass
     else:
@@ -470,24 +466,24 @@ def accom_in_show():
 
 @app.route('/api/accom_in_write', methods=['POST'])
 def accom_in_write():
-    title = request.form['title_give']
+    location = request.form['location_give']
     user_id = request.form['user_give']
     text = request.form['text_give']
     fromdate = request.form['fromdate_give']
     todate = request.form['todate_give']
     count = int(request.form['count_give'])
     accoms = db.accom.find_one(
-        {'$and': [{'title': title}, {'count': count}, {'recount': 0}]}, {'_id': False})
+        {'$and': [{'location': location}, {'count': count}, {'recount': 0}]}, {'_id': False})
     if accoms['user_id'] == user_id:
         recount = 0
     else:
         recount = 1
 
-    if not (title and text):
+    if not (location and text):
         return jsonify({'result': 'fail', 'msg': '빈칸을 입력해주세요.'})
     else:
         doc = {
-            'title': title,
+            'location': location,
             'user_id': user_id,
             'text': text,
             'todate': todate,
@@ -503,16 +499,16 @@ def accom_in_write():
 def accom_in_del():
     accom_id = request.form['id_give']
     count = int(request.form['count_give'])
-    title = request.form['title_give']
+    location = request.form['location_give']
     text = request.form['text_give']
     recount = int(request.form['recount_give'])
     count_db = db.accom.find_one(
-        {'$and': [{'title': title}, {'count': count}, {'text': text}, {'user_id': accom_id}, {'recount': recount}]})
+        {'$and': [{'location': location}, {'count': count}, {'text': text}, {'user_id': accom_id}, {'recount': recount}]})
     if count_db is None:
         return jsonify({'result': 'fail', 'msg': '작성자만 삭제가능합니다.'})
     else:
         db.accom.delete_one(
-            {'$and': [{'title': title}, {'count': count}, {'user_id': accom_id}, {'text': text}]})
+            {'$and': [{'location': location}, {'count': count}, {'user_id': accom_id}, {'text': text}]})
         return jsonify({'result': 'success', 'msg': '삭제완료!'})
 
 
@@ -520,10 +516,10 @@ def accom_in_del():
 def accom_del():
     accom_id = request.form['id_give']
     count = int(request.form['count_give'])
-    title = request.form['title_give']
+    location = request.form['location_give']
     text = request.form['text_give']
     count_db = db.accom.find_one(
-        {'$and': [{'title': title}, {'count': count}, {'text': text}]})
+        {'$and': [{'location': location}, {'count': count}, {'text': text}]})
     if count_db is None:
         return jsonify({'result': 'fail', 'msg': '작성자만 삭제가능합니다.'})
 
@@ -533,7 +529,7 @@ def accom_del():
         recount = count_db['recount']
         if recount == 0:
             db.accom.delete_one(
-                {'$and': [{'title': title}, {'count': count}, {'user_id': accom_id}, {'recount': 0}]})
+                {'$and': [{'location': location}, {'count': count}, {'user_id': accom_id}, {'recount': 0}]})
             return jsonify({'result': 'success', 'msg': '삭제완료!'})
         else:
             return jsonify({'result': 'fail', 'msg': ' 잠시 후 다시 시도해주세요.'})
@@ -545,11 +541,11 @@ def accom_del():
 def accom_modi():
     count = int(request.form['count_give'])
     id_ = request.form['id_give']
-    title = request.form['title_give']
+    location = request.form['location_give']
     recount = int(request.form['recount_give'])
     text = request.form['text_give']
     count_db = db.accom.find_one(
-        {'$and': [{'title': title}, {'count': count}, {'recount': recount}, {'text': text}]}, {'_id': False})
+        {'$and': [{'location': location}, {'count': count}, {'recount': recount}, {'text': text}]}, {'_id': False})
     id_db = count_db['user_id']
 
     if id_ == id_db:
@@ -560,17 +556,16 @@ def accom_modi():
 
 @ app.route('/api/accom_modi_write', methods=['POST'])
 def accom_modi_write():
-    title = request.form['title_give']
+    location = request.form['location_give']
     text = request.form['text_give']
     modi_text = request.form['modi_text_give']
     count = int(request.form['count_give'])
     recount = int(request.form['recount_give'])
-    print(title, text, modi_text, count, recount)
 
-    if not (title and text):
+    if not (location and text):
         return jsonify({'result': 'fail', 'msg': '빈칸을 입력해주세요.'})
     else:
-        db.accom.update_one({'$and': [{'title': title}, {'count': count}, {'recount': recount}, {'text': text}]}, {
+        db.accom.update_one({'$and': [{'location': location}, {'count': count}, {'recount': recount}, {'text': text}]}, {
             '$set': {'text': modi_text}})
 
         return jsonify({'result': 'success', 'msg': '수정이 완료되었습니다!'})

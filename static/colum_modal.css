@@ -302,22 +302,24 @@ input[id*="popup2"] + label + div > label {
 }
 
 .accom_area input {
-  width: 100%;
+  width: 90%;
+  margin-left: 24px;
   padding: 20px 20px 10px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid white;
   font-size: 18px;
   outline: none;
-  color: #2ecc71;
+  color: rgb(225, 225, 225);
   text-align: center;
 }
+
 .accom_area label {
   position: absolute;
   left: -40%;
   top: 20px;
   font-size: 18px;
-  color: #999;
+  color: white;
   transition: all 0.5s ease;
 }
 
@@ -326,11 +328,353 @@ input[id*="popup2"] + label + div > label {
 }
 .btn_area button {
   width: 100%;
-  height: 50px;
-  background: #2ecc71;
-  color: #fff;
+  height: 36px;
+  box-shadow: 0 1px 0 1px rgba(37, 18, 18, 0.04);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  background: ghostwhite;
+  color: #222;
   font-size: 18px;
   border: none;
-  border-radius: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+input[id*="popup0"],
+input[id*="popup1"],
+input[id*="popup2"] {
+  display: none;
+}
+
+input[id*="popup0"] + label,
+input[id*="popup1"] + label,
+input[id*="popup2"] + label {
+  display: inline-block;
+  padding: 20px;
+  background: #fff;
+  color: #000;
+}
+input[id*="popup0"] + label + div,
+input[id*="popup1"] + label + div,
+input[id*="popup2"] + label + div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.review0,
+.accom0 {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  left: 0;
+}
+
+.review0_show,
+.accom0_show {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+  left: 0;
+  margin-bottom: 10%;
+}
+
+.review0_box {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accom0_box {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.review0_show p,
+.accom0_show p {
+  border-radius: 1.15rem;
+  line-height: 1.25;
+  max-width: 90%;
+  padding: 0.5rem 0.875rem;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.review0_show p::before,
+.review0_show p::after,
+.accom0_show p::before,
+.accom0_show p::after {
+  bottom: -0.1rem;
+  content: "";
+  height: 1rem;
+  position: absolute;
+}
+
+p.from-me::before {
+  border-bottom-left-radius: 0.8rem 0.7rem;
+  border-right: 1rem solid #248bf5;
+  right: -0.35rem;
+  transform: translate(0, -0.1rem);
+}
+
+p.from-me::after {
+  background-color: #fff;
+  border-bottom-left-radius: 0.5rem;
+  right: -40px;
+  transform: translate(-30px, -2px);
+  width: 10px;
+}
+
+p[class^="from-"] {
+  margin: 0.5rem 0;
+  width: fit-content;
+}
+
+p.from-them:before {
+  border-bottom-right-radius: 0.8rem 0.7rem;
+  border-left: 1rem solid #e5e5ea;
+  left: -0.35rem;
+  transform: translate(0, -0.1rem);
+}
+
+p.from-them::after {
+  background-color: #fff;
+  border-bottom-right-radius: 0.5rem;
+  left: 20px;
+  transform: translate(-30px, -2px);
+  width: 10px;
+}
+
+.no-tail::before {
+  display: none;
+}
+
+p.from-them {
+  align-items: flex-start;
+  background-color: #e5e5ea;
+  color: #000;
+  left: 3%;
+}
+
+p.from-me {
+  align-items: flex-end;
+  background-color: #248bf5;
+  color: #fff;
+  position: relative;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+p > span2 {
+  color: #fff;
+}
+
+.review0_write,
+.accom0_write {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.review0_write textarea,
+.accom0_write textarea {
+  width: 85%;
+  height: 18px;
+  margin-top: 4px;
+  margin-left: 3%;
+  font-size: 14px;
+  padding: 0.6em 1.3em;
+  resize: none;
+  border-radius: 50px;
+  border: 1px solid #95a5a6;
+  text-align: left;
+}
+
+.review0_write_box,
+.accom0_write_box {
+  width: 100%;
+}
+
+.review0_write_box button,
+.accom0_write_box button {
+  width: 8%;
+  height: 48%;
+  border-radius: 100%;
+  border: 1px solid skyblue;
+  background: #2ecc71;
+  left: 86%;
+  position: absolute;
+  top: 20%;
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 4.5%;
+}
+
+.review0_write textarea:focus {
+  outline: none;
+}
+
+input[id*="popup0"] + label + div,
+input[id*="popup1"] + label + div,
+input[id*="popup2"] + label + div {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+input[id*="popup0"]:checked + label + div,
+input[id*="popup1"]:checked + label + div,
+input[id*="popup2"]:checked + label + div {
+  opacity: 1;
+  visibility: visible;
+}
+input[id*="popup0"] + label + div > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28%;
+  height: 70%;
+  background: #fff;
+  z-index: 3;
+  margin: auto;
+}
+
+input[id*="popup1"] + label + div > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 40%;
+  background: #fff;
+  z-index: 3;
+  margin: auto;
+  border: none;
+}
+
+input[id*="popup2"] + label + div > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 80%;
+  background: #fff;
+  z-index: 3;
+  margin: auto;
+  border: none;
+}
+input[id*="popup0"] + label + div > div > label,
+input[id*="popup1"] + label + div > div > label,
+input[id*="popup2"] + label + div > div > label {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(40%, -40%);
+  padding: 20px;
+  background: #2ecc71;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+input[id*="popup0"] + label + div > div > div > div > div > label,
+input[id*="popup2"] + label + div > div > div > div > div > label {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(100%, -100%);
+  padding: 4px;
+  background: #2ecc71;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 15px;
+  right: 10.5%;
+  top: 92.25%;
+  z-index: 2;
+}
+input[id*="popup0"] + label + div > label,
+input[id*="popup1"] + label + div > label,
+input[id*="popup2"] + label + div > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+}
+
+.review0_send {
+  position: absolute;
+  right: 4%;
+  top: 2.4rem;
+}
+.accom0_send {
+  position: absolute;
+  right: 4%;
+  top: 0.2rem;
+}
+
+.accom_form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  margin-top: 50px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.accom_area {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.accom_area input {
+  width: 90%;
+  margin-left: 24px;
+  padding: 20px 20px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 18px;
+  outline: none;
+  color: rgb(225, 225, 225);
+  text-align: center;
+}
+
+.accom_area label {
+  position: absolute;
+  left: -40%;
+  top: 20px;
+  font-size: 18px;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.btn_area {
+  margin-top: 30px;
+}
+.btn_area button {
+  width: 100%;
+  height: 36px;
+  box-shadow: 0 1px 0 1px rgba(37, 18, 18, 0.04);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  background: ghostwhite;
+  color: #222;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }

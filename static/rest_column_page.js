@@ -1,8 +1,6 @@
 $(document).ready(function () {
     rest_page();
     $('#popup_auth').hide()
-    $('#accom_refer').hide()
-    $('#accom_show').hide()
 });
 
 
@@ -68,7 +66,6 @@ function rest_page() {
             <p class="card-text">${item_tags1} ${item_tags2} ${item_tags3}</p>
             <p class="card-text">${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}</p>
             <button class="card_like" onclick="rest_like('${title}')"> 좋아요 <br><span style="color:red;">${like} </span></br></button>
-            <button class="card_accom" onclick="accom0_show('${title}')"> 동행 </button>
             <button class="card_review" onclick="review0_show('${title}')"> 리뷰 </button>
             
         `
