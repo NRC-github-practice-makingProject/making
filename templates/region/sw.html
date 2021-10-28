@@ -1,513 +1,59 @@
-<header data-test="header" id="header" class="header theme-col--primary black" data-controller="Header"
-    data-current-styles="{
-    &quot;layout&quot;: &quot;navRight&quot;,
-    &quot;action&quot;: {
-      &quot;href&quot;: &quot;/reservations&quot;,
-      &quot;buttonText&quot;: &quot;Book a Table&quot;,
-      &quot;newWindow&quot;: false
-    },
-    &quot;showSocial&quot;: false,
-    &quot;menuOverlayAnimation&quot;: &quot;fade&quot;,
-    &quot;cartStyle&quot;: &quot;cart&quot;,
-    &quot;cartText&quot;: &quot;Cart&quot;,
-    &quot;showButton&quot;: false,
-    &quot;showCart&quot;: false,
-    &quot;showAccountLogin&quot;: true,
-    &quot;headerStyle&quot;: &quot;theme&quot;,
-    &quot;languagePicker&quot;: {
-      &quot;enabled&quot;: false,
-      &quot;iconEnabled&quot;: false
-    },
-    &quot;mobileOptions&quot;: {
-      &quot;layout&quot;: &quot;logoLeftNavRight&quot;,
-      &quot;menuIcon&quot;: &quot;doubleLineHamburger&quot;
-    },
-    &quot;dynamicOptions&quot;: {
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      }
-    },
-    &quot;solidOptions&quot;: {
-      &quot;headerOpacity&quot;: {
-        &quot;unit&quot;: &quot;%&quot;,
-        &quot;value&quot;: 100.0
-      },
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      },
-      &quot;dropShadow&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blur&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 30.0
-        },
-        &quot;spread&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        },
-        &quot;distance&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        }
-      },
-      &quot;blurBackground&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blurRadius&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 12.0
-        }
-      }
-    },
-    &quot;gradientOptions&quot;: {
-      &quot;gradientType&quot;: &quot;faded&quot;,
-      &quot;headerOpacity&quot;: {
-        &quot;unit&quot;: &quot;%&quot;,
-        &quot;value&quot;: 90.0
-      },
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      },
-      &quot;dropShadow&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blur&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 30.0
-        },
-        &quot;spread&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        },
-        &quot;distance&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        }
-      },
-      &quot;blurBackground&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blurRadius&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 12.0
-        }
-      }
-    },
-    &quot;showPromotedElement&quot;: false
-    }" data-section-id="header" data-header-theme="" data-menu-overlay-theme="" data-header-style="theme"
-    data-first-focusable-element="" tabindex="-1" data-controllers-bound="Header">
+<!-- 공통 -->
+<!DOCTYPE html>
+<html lang="ko">
 
-    <script>
-        function shouldShowAnnouncementBar() {
-            try {
-                if (!window.Static.SQUARESPACE_CONTEXT.showAnnouncementBar) {
-                    return false;
-                }
-                var localDataStr = localStorage.getItem('squarespace-announcement-bar');
-                if (localDataStr && JSON.parse(localDataStr).closed) {
-                    return false;
-                }
-                return true;
-            } catch (e) {
-                console.error(e);
-                return true;
-            }
-        }
-        if (shouldShowAnnouncementBar()) {
-            document.body.classList.add('announcement-bar-reserved-space');
-        }
-        //# sourceURL=reserveSpaceForAnnouncementBar.js
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='regionstyle.css')}}">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+  <!-- 공통 -->
 
-    <div class="sqs-announcement-bar-dropzone">
-        <div class="sqs-announcement-bar-custom-location">
-            <div id="yui_3_17_2_1_1635307376020_137" class="yui3-widget sqs-widget sqs-announcement-bar">
-                <div id="yui_3_17_2_1_1635307376020_139" class="sqs-announcement-bar-content">
-                    <div class="sqs-announcement-bar-text">
-                        <span class="sqs-announcement-bar-close" tabindex="0" role="button"
-                            aria-label="Close Announcement"></span>
-                        <div id="announcement-bar-text-inner-id" class="sqs-announcement-bar-text-inner">
-                            <p class="" style="white-space:pre-wrap;"><span style="color: rgb(0, 0, 0)"><span
-                                        style="background-color:rgb(255, 255, 255)">Beginning September 7th, we will be
-                                        requiring our Guests to show proof they are vaccinated against Covid-19. Please
-                                        learn more </span></span><a href="/s/HHI-Vaccination-for-Website972021.pdf"
-                                    target="_blank">here</a><span style="color: rgb(0, 0, 0)"><span
-                                        style="background-color:rgb(255, 255, 255)">.</span></span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/split.js"></script>
+  <title> SEOUL </title>
+</head>
+
+<body>
+
+  <div class="scene">
+    <div class="full-bg">
+      <img src="./static/img/2split2.png" alt="">
     </div>
-
-    <div class="header-announcement-bar-wrapper">
-
-        <a href="#page" tabindex="1" class="header-skip-link">
-            Skip to Content
-        </a>
-        <div class="header-inner container--fluid header-mobile-layout-logo-left-nav-right header-layout-nav-right">
-            <!-- Background -->
-            <div class="header-background theme-bg--primary"></div>
-
-            <div class="header-display-desktop" data-content-field="site-title">
-                <!-- Social -->
+  </div>
 
 
+  <div class="contact-form">
+    <li class="att">
+      <a href="/attr"><span class="red">A</span>ttraction</a>
+    </li>
+    <li class="res">
+      <a href="/rest"><span class="blue">R</span>estaurant</a>
+    </li>
+  </div>
+</body>
 
-                <!-- Title and nav wrapper -->
-                <div class="header-title-nav-wrapper">
-                    <!-- Title -->
-
-                    <div class="header-title" data-animation-role="header-element">
-                        <div class="header-title-logo">
-                            <a href="/" data-animation-role="header-element">
-                                <img src="//images.squarespace-cdn.com/content/v1/5f33f29fccf19a635218746f/1597783914989-8V27LS8SXGEVZ2DGXRAE/mv.png?format=1500w"
-                                    alt="Madison &amp; Vine">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Nav -->
-                    <div class="header-nav">
-                        <div class="header-nav-wrapper">
-                            <nav class="header-nav-list">
-                                <div class="header-nav-item header-nav-item--collection header-nav-item--homepage">
-                                    <a href="/" data-animation-role="header-element">
-
-                                        Home
-                                    </a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--collection">
-                                    <a href="/hourslocation" data-animation-role="header-element">
-
-                                        Hours/Location
-                                    </a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--external">
-                                    <a href="https://www.opentable.com/restref/client/?corrid=1383fcb6-98c5-4a0f-a57b-c6dbe5d01bf0&amp;lang=en-US&amp;restref=19306"
-                                        target="_blank" data-animation-role="header-element">Reservations</a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--collection header-nav-item--active">
-                                    <a href="/menu" data-animation-role="header-element">
-
-                                        <span class="visually-hidden">Current Page:</span>
-
-                                        Menu
-                                    </a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--collection">
-                                    <a href="/private-events" data-animation-role="header-element">
-
-                                        Private Events
-                                    </a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--external">
-                                    <a href="https://hospitalityholdings.cardfoundry.com/giftcards.php" target="_blank"
-                                        data-animation-role="header-element">Gift Cards</a>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Actions -->
-                <div class="header-actions header-actions--right">
-
-                    <div class="showOnMobile">
-                    </div>
-
-                    <div class="showOnDesktop">
-                    </div>
-
-                </div>
-
-                <!-- Burger -->
-                <div class="header-burger no-actions"data-animation-role="header-element">
-                    <button class="header-burger-btn burger" data-test="header-burger">
-                        <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                        <span hidden="" class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                        <div class="burger-box">
-                            <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                                <div class="top-bun"></div>
-                                <div class="patty"></div>
-                                <div class="bottom-bun"></div>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-
-            </div>
-            <div class="header-display-mobile" data-content-field="site-title">
-
-                <!-- Social -->
-
-                <!-- Title and nav wrapper -->
-                <div class="header-title-nav-wrapper">
-
-                    <!-- Title -->
-                    <div class="
-                        header-title
-                        
-                      " data-animation-role="header-element">
-
-                        <div class="header-title-logo">
-                            <a href="/" data-animation-role="header-element">
-                                <img src="//images.squarespace-cdn.com/content/v1/5f33f29fccf19a635218746f/1597783914989-8V27LS8SXGEVZ2DGXRAE/mv.png?format=1500w"
-                                    alt="Madison &amp; Vine">
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Nav -->
-                    <div class="header-nav">
-                        <div class="header-nav-wrapper">
-                            <nav class="header-nav-list">
-
-                                <div class="header-nav-item header-nav-item--collection header-nav-item--homepage">
-                                    <a href="/" data-animation-role="header-element">
-
-                                        Home
-                                    </a>
-                                </div>
-
-                                <div class="header-nav-item header-nav-item--collection">
-                                    <a href="/hourslocation" data-animation-role="header-element">
-
-                                        Hours/Location
-                                    </a>
-                                </div>
-
-                                <div class="header-nav-item header-nav-item--external">
-                                    <a href="https://www.opentable.com/restref/client/?corrid=1383fcb6-98c5-4a0f-a57b-c6dbe5d01bf0&amp;lang=en-US&amp;restref=19306"
-                                        target="_blank" data-animation-role="header-element">Reservations</a>
-                                </div>
-
-                                <div class="header-nav-item header-nav-item--collection header-nav-item--active">
-                                    <a href="/menu" data-animation-role="header-element">
-                                        <span class="visually-hidden">Current Page:</span>
-                                        Menu
-                                    </a>
-                                </div>
-
-                                <div class="header-nav-item header-nav-item--collection">
-                                    <a href="/private-events" data-animation-role="header-element">
-                                        Private Events
-                                    </a>
-                                </div>
-                                <div class="header-nav-item header-nav-item--external">
-                                    <a href="https://hospitalityholdings.cardfoundry.com/giftcards.php" target="_blank"
-                                        data-animation-role="header-element">Gift Cards</a>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <!-- Actions -->
-                <div class="header-actions header-actions--right">
-                    <div class="showOnMobile">
-                    </div>
-                    <div class="showOnDesktop">
-                    </div>
-                </div>
-                <!-- Burger -->
-                <div class="header-burger no-actions"data-animation-role="header-element">
-                    <button class="header-burger-btn burger" data-test="header-burger">
-                        <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                        <span hidden="" class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                        <div class="burger-box">
-                            <div class="burger-inner
-                       header-menu-icon-doubleLineHamburger">
-                                <div class="top-bun"></div>
-                                <div class="patty"></div>
-                                <div class="bottom-bun"></div>
-                            </div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- (Mobile) Menu Navigation -->
-    <div class="header-menu header-menu--folder-list
-  
-        " data-current-styles="{
-    &quot;layout&quot;: &quot;navRight&quot;,
-    &quot;action&quot;: {
-      &quot;href&quot;: &quot;/reservations&quot;,
-      &quot;buttonText&quot;: &quot;Book a Table&quot;,
-      &quot;newWindow&quot;: false
-    },
-    &quot;showSocial&quot;: false,
-    &quot;menuOverlayAnimation&quot;: &quot;fade&quot;,
-    &quot;cartStyle&quot;: &quot;cart&quot;,
-    &quot;cartText&quot;: &quot;Cart&quot;,
-    &quot;showButton&quot;: false,
-    &quot;showCart&quot;: false,
-    &quot;showAccountLogin&quot;: true,
-    &quot;headerStyle&quot;: &quot;theme&quot;,
-    &quot;languagePicker&quot;: {
-      &quot;enabled&quot;: false,
-      &quot;iconEnabled&quot;: false
-    },
-    &quot;mobileOptions&quot;: {
-      &quot;layout&quot;: &quot;logoLeftNavRight&quot;,
-      &quot;menuIcon&quot;: &quot;doubleLineHamburger&quot;
-    },
-    &quot;dynamicOptions&quot;: {
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      }
-    },
-    &quot;solidOptions&quot;: {
-      &quot;headerOpacity&quot;: {
-        &quot;unit&quot;: &quot;%&quot;,
-        &quot;value&quot;: 100.0
-      },
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      },
-      &quot;dropShadow&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blur&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 30.0
-        },
-        &quot;spread&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        },
-        &quot;distance&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        }
-      },
-      &quot;blurBackground&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blurRadius&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 12.0
-        }
-      }
-    },
-    &quot;gradientOptions&quot;: {
-      &quot;gradientType&quot;: &quot;faded&quot;,
-      &quot;headerOpacity&quot;: {
-        &quot;unit&quot;: &quot;%&quot;,
-        &quot;value&quot;: 90.0
-      },
-      &quot;border&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;position&quot;: &quot;allSides&quot;,
-        &quot;thickness&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 4.0
-        }
-      },
-      &quot;dropShadow&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blur&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 30.0
-        },
-        &quot;spread&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        },
-        &quot;distance&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 0.0
-        }
-      },
-      &quot;blurBackground&quot;: {
-        &quot;enabled&quot;: false,
-        &quot;blurRadius&quot;: {
-          &quot;unit&quot;: &quot;px&quot;,
-          &quot;value&quot;: 12.0
-        }
-      }
-    },
-    &quot;showPromotedElement&quot;: false
-    }" data-section-id="overlay-nav" data-show-account-login="true" data-test="header-menu"
-        style="padding-top: 190.891px;">
-        <div class="header-menu-bg theme-bg--primary"></div>
-        <div class="header-menu-nav">
-            <nav class="header-menu-nav-list">
-
-                <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
-                    <!-- Menu Navigation -->
-                    <div class="header-menu-nav-folder-content">
-
-                        <div
-                            class="container header-menu-nav-item header-menu-nav-item--collection header-menu-nav-item--homepage">
-                            <a href="/">
-
-                                Home
-                            </a>
-                        </div>
-
-                        <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                            <a href="/hourslocation">
-
-                                Hours/Location
-                            </a>
-                        </div>
-
-                        <div class="container header-menu-nav-item header-menu-nav-item--external">
-                            <a href="https://www.opentable.com/restref/client/?corrid=1383fcb6-98c5-4a0f-a57b-c6dbe5d01bf0&amp;lang=en-US&amp;restref=19306"
-                                target="_blank">Reservations</a>
-                        </div>
-
-                        <div
-                            class="container header-menu-nav-item header-menu-nav-item--collection header-menu-nav-item--active">
-                            <a href="/menu">
-
-                                <span class="visually-hidden">Current Page:</span>
-
-                                Menu
-                            </a>
-                        </div>
-
-                        <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                            <a href="/private-events">
-
-                                Private Events
-                            </a>
-                        </div>
-
-                        <div class="container header-menu-nav-item header-menu-nav-item--external">
-                            <a href="https://hospitalityholdings.cardfoundry.com/giftcards.php" target="_blank">Gift
-                                Cards</a>
-                        </div>
+</html>
 
 
-                    </div>
-
-                    <div class="header-menu-actions"></div>
 
 
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
