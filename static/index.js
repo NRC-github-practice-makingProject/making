@@ -57,11 +57,13 @@ function enterkey() {
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 function rrandomSearches() {
     let rattr_input = rand(0, 1100);
     let rrest_input = rand(0, 1336);
-    console.log(rattr_input);
-    console.log(rrest_input);
+  
+    // console.log(rattr_input);
+    // console.log(rrest_input);
     $('#rsearch-box').empty()
     $.ajax({
         type: "POST",
@@ -72,6 +74,23 @@ function rrandomSearches() {
             let random_searchs = response['rrandomDisplay']
             for (let i = 0; i < 4; i++) {
                 rrest_input = rrest_input + i
+
+                let random_number= rand(0,140);
+                let random_star =''
+                if(random_number <= '20'){
+                    random_star = "⭐️"
+                }else if(random_number <= '40'){
+                    random_star = "⭐️⭐️"
+                }else if(random_number <='80'){
+                    random_star = "⭐️⭐️⭐️"
+                }else if(random_number <='120'){
+                    random_star = "⭐️⭐️⭐️⭐️"
+                }else if(random_number <='140'){
+                    random_star = "⭐️⭐️⭐️⭐️⭐️"
+                }else{
+                    random_star = "⭐️⭐️⭐️⭐️⭐️"
+                }
+                
                 let title = random_searchs[rrest_input]['title']
                 let img = random_searchs[rrest_input]['img']
                 let sub_title = random_searchs[rrest_input]['sub_title']
@@ -121,7 +140,8 @@ function rrandomSearches() {
             <p class="item0_sub_tag">
                 ${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}
             </p>
-            <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
+            
+            <span class="item0_star">${random_star}</span>
         </div>
     </div>
     `
@@ -136,8 +156,8 @@ function rrandomSearches() {
 function arandomSearches() {
     let rattr_input = rand(0, 1100);
     let rrest_input = rand(0, 1336);
-    console.log(rattr_input);
-    console.log(rrest_input);
+    // console.log(rattr_input);
+    // console.log(rrest_input);
     $('#asearch-box').empty()
     $.ajax({
         type: "POST",
@@ -148,6 +168,23 @@ function arandomSearches() {
             let random_searchs = response['arandomDisplay']
             for (let i = 0; i < 4; i++) {
                 rattr_input = rattr_input + i
+
+                let random_number= rand(0,140);
+                let random_star =''
+                if(random_number <= '20'){
+                    random_star = "⭐️"
+                }else if(random_number <= '40'){
+                    random_star = "⭐️⭐️"
+                }else if(random_number <='80'){
+                    random_star = "⭐️⭐️⭐️"
+                }else if(random_number <='120'){
+                    random_star = "⭐️⭐️⭐️⭐️"
+                }else if(random_number <='140'){
+                    random_star = "⭐️⭐️⭐️⭐️⭐️"
+                }else{
+                    random_star = "⭐️⭐️⭐️⭐️⭐️"
+                }
+
                 let title = random_searchs[rattr_input]['title']
                 let img = random_searchs[rattr_input]['img']
                 let sub_title = random_searchs[rattr_input]['sub_title']
@@ -197,7 +234,7 @@ function arandomSearches() {
         <p class="item0_sub_tag">
             ${sub_item_tag} ${sub_item_tag2} ${sub_item_tag3} ${sub_item_tag4} ${sub_item_tag5}
         </p>
-        <span class="item0_star">별점 표기 예정입니다.⭐️⭐️⭐️⭐️⭐️</span>
+        <span class="item0_star">${random_star}</span>
     </div>
     </div>
     `
